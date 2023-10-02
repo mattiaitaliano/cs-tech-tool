@@ -1,0 +1,81 @@
+/* =============================== PALETTE =========================*/
+
+$dark-color: #615f5f;
+$light-color: #e7e7e7;
+$orange: #feb305;
+
+
+
+/* =============================== HEADER BANNER  =========================*/
+
+.headerBanner {
+    padding-left: 3%;      
+    line-height: 70px;
+    background-color: white;
+    color: $dark-color;
+
+    .bannerImg {
+        height: 40px;
+        width: 40px;
+        transform: translate(-10px, 10px);
+    }
+    
+    .title {
+        color: $dark-color;
+        font-size: 1.6rem;
+    }
+
+    .options {
+        float: right;
+        margin-right: 3%;
+        font-size: 1.5rem;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+/* =============================== NAVBAR  =========================*/
+
+.navbar {
+    text-align: center;
+    height: inherit;
+
+
+    ul {
+        list-style-type: none;
+        padding: 0% 3% 0% 3%;
+        margin: 0;
+        position: relative;
+        height: 100%;      
+        display: flex;
+        align-items: center;
+
+        li {
+            
+            float: left;
+            margin-right: 8%;
+
+            a {
+                text-decoration: none;
+                color: $light-color;        
+                line-height: 70px;
+
+                &:hover {
+                    color: $orange;
+                    transition: all .3s ease-in-out;
+                }
+            
+            }
+        }
+
+    }
+}

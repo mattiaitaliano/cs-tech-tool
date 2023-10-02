@@ -1,0 +1,29 @@
+/* =============================== PALETTE =========================*/
+
+$dark-color: #3c3c3c;
+$light-color: #e7e7e7;
+$orange: #fec305;
+
+/* =============================== APP COMPONENTS =========================*/
+
+$nav-height: 70px;
+$head-height: 70px;
+
+.headComp {
+  min-height: $head-height;
+}
+
+.navbarComp {
+  position: fixed;
+  min-width: 100%;
+  min-height: $nav-height;
+  background-color: $dark-color;
+}
+
+.mainComp {
+  position: fixed;
+  top: calc($nav-height + $head-height);
+  height: calc(100vh - $nav-height - $head-height);
+  min-height: 500px;
+  padding: 3%;
+}

@@ -53,9 +53,9 @@
       {
         "fullscreen": false,
         "height": 600,
-        "resizable": true,
+        "resizable": false,
         "title": "CS Tech Tool",
-        "width": 800
+        "width": 900
       }
     ]
   }
