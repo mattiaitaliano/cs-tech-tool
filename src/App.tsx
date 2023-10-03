@@ -1,21 +1,57 @@
-import React from 'react';
+import React, { ReactElement, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
 import './App.scss';
+
 import Navbar from './components/Navbar';
-import { MemoryRouter, Route, Routes, NavLink } from 'react-router-dom';
 import Home from './components/Home';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import Products from './components/Products';
+import Utility from './components/Utility';
+import Links from './components/Links';
+import NotFound from './utilities/NotFound';
+import Overlay from './utilities/Overlay';
+import Info from './components/Info';
 
-function App() {
+const App = (): React.JSX.Element => {
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false)
+  
+  const toggleOverlay = () => {
+      setIsOverlayOpen(!isOverlayOpen);
+    };
+
+
+  const views = [
+    { path: "/", element: <Home /> },
+    { path: "/products", element: <Products /> },
+    { path: "/utility", element: <Utility /> },
+    { path: "/links", element: <Links /> },
+    { path: "*", element: <NotFound /> }
+  ];
+
+
   return (
     <>
+    <Overlay isOpen={isOverlayOpen} onClose={toggleOverlay}>
+      <Info />
+    </Overlay>
+
     <div className='headComp'>
-      <Header/>
+      <Header onOpenOverlay={toggleOverlay} />
     </div>
     <div className='navbarComp'>
       <Navbar/>
     </div>
     <div className='mainComp'>
-      <Home/>
+    <Routes>
+      {views.map((view, index) => (
+        <Route key={index} path={view.path} element={view.element} />
+      ))} 
+</Routes>
+    </div>
+    <div className='footComp'>
+      <Footer/>
     </div>
     </>
   );

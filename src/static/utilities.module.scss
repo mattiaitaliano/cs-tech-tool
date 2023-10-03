@@ -1,0 +1,58 @@
+/* ======================================= UTILITIES ======================================= */
+
+.overlayBackground {
+    background-color: rgba(0, 0, 0, .5);
+    width:  100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.overlayContainer {
+    background-color: rgb(238, 236, 236);
+    border: 1px solid rgb(79, 79, 79);
+    position: fixed;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding: 30px;
+    width: 30%;
+    height: 50%;
+
+}
+
+.overlayContent {
+    position: relative;
+    min-height: calc(100% - 30px);
+}
+
+.overlayOptions {
+    position: relative;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 30px;
+    text-align: center;
+    align-items: baseline;
+
+    button {
+        background-color: rgb(21, 127, 255);
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        cursor: pointer;        
+        transition: .2s ease-in-out;
+
+        &:hover {
+            background-color: rgb(20, 81, 247);
+            transition: .2s ease-in-out;
+        }
+    }
+}

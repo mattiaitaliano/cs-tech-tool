@@ -3,7 +3,7 @@
   "build": {
     "beforeBuildCommand": "yarn build",
     "beforeDevCommand": "yarn cross-env BROWSER=none yarn start",
-    "devPath": "http://localhost:3000",
+    "devPath": "http://localhost:3000/",
     "distDir": "../build"
   },
   "package": {
@@ -23,7 +23,7 @@
       },
       "externalBin": [],
       "icon": [
-        "icons/icon.png"
+        "icons/appIcon.ico"
       ],
       "identifier": "com.csdental.cstechtool",
       "longDescription": "",
@@ -52,10 +52,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 750,
         "resizable": false,
         "title": "CS Tech Tool",
-        "width": 900
+        "width": 1000
       }
     ]
   }

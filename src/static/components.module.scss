@@ -1,8 +1,8 @@
 /* =============================== PALETTE =========================*/
 
-$dark-color: #615f5f;
+$dark-color: rgb(80, 79, 79);
 $light-color: #e7e7e7;
-$orange: #feb305;
+$orange: #ffbb1e;
 
 
 
@@ -11,7 +11,6 @@ $orange: #feb305;
 .headerBanner {
     padding-left: 3%;      
     line-height: 70px;
-    background-color: white;
     color: $dark-color;
 
     .bannerImg {
@@ -22,12 +21,13 @@ $orange: #feb305;
     
     .title {
         color: $dark-color;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     .options {
         float: right;
-        margin-right: 3%;
+        margin-right: 1.8%;
         font-size: 1.5rem;
     }
 
@@ -35,9 +35,10 @@ $orange: #feb305;
         border: none;
         background-color: transparent;
         cursor: pointer;
+        color:rgb(101, 100, 100);
 
         &:hover{
-            transform: scale(1.2);
+            color: black;
         }
     }
 }
@@ -65,17 +66,80 @@ $orange: #feb305;
             margin-right: 8%;
 
             a {
-                text-decoration: none;
-                color: $light-color;        
+                text-decoration: none;   
                 line-height: 70px;
+
+                &.navLink {
+                    color: rgb(169, 168, 168);
+                }
+    
+                &.linkActive {
+                    color: white;
+                }
 
                 &:hover {
                     color: $orange;
-                    transition: all .3s ease-in-out;
+                    transition: all .15s ease-in-out;
                 }
             
             }
         }
 
+    }
+}
+
+/* ============================================== INFO OVERLAY ======================================= */
+
+.infoContainer {
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+
+    p {
+        font-size: .8rem;
+        color:rgb(58, 58, 58);
+        text-align: left;
+        width: 100%;
+
+        span {
+            text-align: right;
+        }
+    }
+}
+
+.infoTitle {
+    text-align: center;
+    color: rgb(58, 58, 58);
+    letter-spacing: .3px;
+    font-size: 1.5rem;
+    font-weight: lighter;
+
+}
+
+.infoContent {
+    font-size: .8rem;
+    padding-top: 30px;
+}
+
+
+/* ============================================== FOOTER ======================================= */
+
+footer {
+    display: flex;
+    line-height: 50px;
+    color: $light-color;
+    min-width: 100%;
+    font-size: .85rem;
+
+    .foot {
+        flex: 1;
+        margin-left: 3%;
+    }
+
+    .version {
+        flex: 2;
+        float: right;
+        text-align: right;
+        margin-right: 3%;
     }
 }

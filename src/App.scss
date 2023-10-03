@@ -1,6 +1,6 @@
 /* =============================== PALETTE =========================*/
 
-$dark-color: #3c3c3c;
+$dark-color: rgb(56, 55, 55);
 $light-color: #e7e7e7;
 $orange: #fec305;
 
@@ -8,6 +8,7 @@ $orange: #fec305;
 
 $nav-height: 70px;
 $head-height: 70px;
+$foot-height: 50px;
 
 .headComp {
   min-height: $head-height;
@@ -23,7 +24,15 @@ $head-height: 70px;
 .mainComp {
   position: fixed;
   top: calc($nav-height + $head-height);
-  height: calc(100vh - $nav-height - $head-height);
+  height: calc(100vh - $nav-height - $head-height - $foot-height);
   min-height: 500px;
   padding: 3%;
+}
+
+.footComp {
+  position: fixed;
+  min-width: 100%;
+  min-height: $foot-height;
+  background-color: $dark-color;
+  bottom: 0px;
 }
