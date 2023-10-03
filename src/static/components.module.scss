@@ -118,7 +118,16 @@ $orange: #ffbb1e;
 
 .infoContent {
     font-size: .8rem;
-    padding-top: 30px;
+    padding-top: 20px;
+
+    a {
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+            color:#faa700;
+        }
+    }
 }
 
 
