@@ -13,8 +13,16 @@ import Links from './components/Links';
 import NotFound from './utilities/NotFound';
 import Overlay from './utilities/Overlay';
 import Info from './components/Info';
+import Login from './utilities/Login';
 
 const App = (): React.JSX.Element => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+  };
+
   const [isOverlayOpen, setIsOverlayOpen] = useState(false)
   
   const toggleOverlay = () => {
@@ -33,27 +41,33 @@ const App = (): React.JSX.Element => {
 
   return (
     <>
-    <Overlay isOpen={isOverlayOpen} onClose={toggleOverlay}>
-      <Info />
-    </Overlay>
+    { isLoggedIn ? (
+      <>
+      <Overlay isOpen={isOverlayOpen} onClose={toggleOverlay}>
+        <Info />
+      </Overlay>
 
-    <div className='headComp'>
-      <Header onOpenOverlay={toggleOverlay} />
-    </div>
-    <div className='navbarComp'>
-      <Navbar/>
-    </div>
-    <div className='mainComp'>
-    <Routes>
-      {views.map((view, index) => (
-        <Route key={index} path={view.path} element={view.element} />
-      ))} 
-</Routes>
-    </div>
-    <div className='footComp'>
-      <Footer/>
-    </div>
-    </>
+      <div className='headComp'>
+        <Header onOpenOverlay={toggleOverlay} />
+      </div>
+      <div className='navbarComp'>
+        <Navbar/>
+      </div>
+      <div className='mainComp'>
+      <Routes>
+        {views.map((view, index) => (
+          <Route key={index} path={view.path} element={view.element} />
+        ))} 
+  </Routes>
+      </div>
+      <div className='footComp'>
+        <Footer/>
+      </div> 
+      </>
+        ) : (
+        <Login onLoginSuccess={handleLoginSuccess} />
+      )}
+      </>
   );
 }
 

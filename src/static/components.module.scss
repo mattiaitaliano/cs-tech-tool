@@ -152,3 +152,22 @@ footer {
         margin-right: 3%;
     }
 }
+
+/* ================================= TOOL CARDS ===================================== */
+
+.toolContainer {
+    
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(4, 22vw);
+    grid-template-rows: repeat(3, 100%);
+    gap: 16px;
+  
+    .toolCardItem {
+      border: 1px solid #ccc;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
