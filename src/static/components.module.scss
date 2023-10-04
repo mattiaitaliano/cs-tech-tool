@@ -159,15 +159,64 @@ footer {
     
     display: grid;
     text-align: center;
-    grid-template-columns: repeat(4, 22vw);
-    grid-template-rows: repeat(3, 100%);
+    grid-template-columns: repeat(5, 175px);
+    grid-template-rows: repeat(2, 250px);
     gap: 16px;
   
     .toolCardItem {
-      border: 1px solid #ccc;
-      padding: 8px;
-      display: flex;
+      position: relative;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      min-height: 100px;
+      font-size: .9rem;
+
+      .cardTitle {
+        background-color: $dark-color;
+        border: 1px solid $dark-color;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        color: white;
+        min-height: 50px;
+        line-height: 50px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .cardContent {
+        border: 1px solid $dark-color;
+        border-top: none;
+        transition: .2s ease-in-out;
+        height: 200px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        background-attachment: fixed;
+        background-size: cover;
+
+        img {
+            width: 180px;
+            
+        }     
+
+        .cardContentOverlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 0%;
+            background-color: #ffaa00f3;
+            color: white;
+            transition: .4s ease-in-out;
+            z-index: 7;
+            opacity: 0;
+        }
+
+        &:hover > .cardContentOverlay {
+            height: 100%;
+            transition: .5s ease-in-out;
+            opacity: 1;
+        }
+     }
+
     }
-  }
+}
