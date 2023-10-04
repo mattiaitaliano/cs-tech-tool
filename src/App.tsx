@@ -41,15 +41,16 @@ const App = (): React.JSX.Element => {
 
   return (
     <>
-    { isLoggedIn ? (
-      <>
-      <Overlay isOpen={isOverlayOpen} onClose={toggleOverlay}>
+    <div className='headComp'>
+    <Header onOpenOverlay={toggleOverlay} />
+  </div>
+  <Overlay isOpen={isOverlayOpen} onClose={toggleOverlay}>
         <Info />
       </Overlay>
+      
+    { isLoggedIn ? (
+      <>
 
-      <div className='headComp'>
-        <Header onOpenOverlay={toggleOverlay} />
-      </div>
       <div className='navbarComp'>
         <Navbar/>
       </div>

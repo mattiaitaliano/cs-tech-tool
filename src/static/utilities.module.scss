@@ -56,3 +56,76 @@
         }
     }
 }
+
+/* ============================== LOGIN =============================== */
+
+
+.loginBackground {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: rgb(238, 238, 238);
+}
+
+.loginContainer {
+    background-color: rgb(238, 238, 238);
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 10px;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    padding: 30px;
+    width: 35%;
+    height: 35%;
+
+        img {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        input {
+            width: 97.5%;
+            height: 3rem;
+            border: 1px solid rgb(204, 204, 204);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            padding-left: 5px;
+
+            &:focus {
+                border: 1px solid #612166;
+                outline: none;
+            }
+        }
+
+        button {
+
+            margin: 0 auto;
+            text-align: center;
+            background-color: #612166;
+            color: white;
+            width: 100%;
+            border-radius: 10px;
+            min-height: 3rem;
+            outline: none;
+            border: transparent;
+            font-size: 1.2rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #561d5a;
+            }
+
+        }
+
+
+}
+
