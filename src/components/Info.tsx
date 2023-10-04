@@ -1,11 +1,11 @@
 import style from '../static/components.module.scss';
 import logo from '../static/img/icon.png'
-import { invoke } from '@tauri-apps/api/tauri';
+import { open } from '@tauri-apps/api/shell';
 
 const Info = (): React.JSX.Element => {
 
-    function openLink() {
-        invoke('open_url', { url: 'https://infotec.carestreamdental.com/' });
+    function openInfotec() {
+        open('https://infotec.carestreamdental.com/');
       }
 
     return (
@@ -30,7 +30,7 @@ const Info = (): React.JSX.Element => {
                     This tool is exclusively for certified Carestream Dental technicians. It does not replace individual technician troubleshooting or Carestream Dental support. It's designed to automate tasks and solutions after careful problem analysis. Only use this tool after considering its effects.
                     <br />
                     <br />
-                    For any questions, contact Carestream Dental support or visit the <a onClick={openLink}>Infotec</a> website.
+                    For any questions, contact Carestream Dental support or visit the <a onClick={openInfotec}>Infotec</a> website.
 
                 </div>
 
