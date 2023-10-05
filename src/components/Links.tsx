@@ -7,6 +7,7 @@ import activation from '../static/img/links/activation.png';
 import status from '../static/img/links/status.png';
 import csdental from '../static/img/links/csdental.png';
 import mailto from '../static/img/links/mailto.png';
+import bomgar from '../static/img/links/bomgar.png';
 
 
 const Links = ():React.JSX.Element => {
@@ -34,6 +35,10 @@ const Links = ():React.JSX.Element => {
     const openMail = () => {
         window.open('mailto:techdental@csdental.com');
       }
+
+    const openBomgar = () => {
+        open('https://cssupport.csdental.com/');
+      }
       
 
     return (
@@ -48,7 +53,7 @@ const Links = ():React.JSX.Element => {
                 <div className={style.cardContentOverlay}>
                     <br />
                     <br />
-                    Carestream Dental Infotec's Portal. <br /><br />Softwares, Drivers, Technews and Documentations.
+                    Carestream Dental Infotec's Portal<br /><br />Softwares, Drivers, Technews and Documentations.
                 </div>
                 </div>
             </div>
@@ -62,7 +67,7 @@ const Links = ():React.JSX.Element => {
                 <div className={style.cardContentOverlay}>
                     <br />
                     <br />
-                    Carestream Dental Part's Portal. <br /><br />Spare part codes for each CS product with the exchange manual. Check the availability.
+                    Carestream Dental Part's Portal<br /><br />Spare part codes for each CS product with the exchange manual. Check the availability.
                 </div>
                 </div>
             </div>
@@ -76,7 +81,7 @@ const Links = ():React.JSX.Element => {
                 <div className={style.cardContentOverlay}>
                     <br />
                     <br />
-                    Carestream Dental Activation's Portal. <br /><br />Register account and activate the product. Download the latest activation client.
+                    Carestream Dental Activation's Portal<br /><br />Register account and activate the product. Download the latest activation client.
                 </div>
                 </div>
             </div>
@@ -119,6 +124,20 @@ const Links = ():React.JSX.Element => {
                     <br />
                     <br />
                     Send an email to techdental@csdental.com <br /><br />It will open the default email application of the current system.
+                </div>
+                </div>
+            </div>
+            </a>
+
+            <a onClick={openBomgar}>
+            <div className={style.toolCardItem}>
+                <div className={style.cardTitle}>Bomgar</div>
+                <div className={style.cardContent}>
+                    <img src={bomgar} />
+                <div className={style.cardContentOverlay}>
+                    <br />
+                    <br />
+                    Bomgar remote support <br /><br />Connect with a Carestream Dental Support Representative by inserting the provided key.
                 </div>
                 </div>
             </div>
