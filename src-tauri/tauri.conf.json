@@ -15,6 +15,9 @@
       "shell": {
         "all": true,
         "open": true
+    },
+    "notification": {
+      "all": true
     }
     },
     "bundle": {
