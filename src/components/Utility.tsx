@@ -1,29 +1,23 @@
-import React from 'react';
-import { invoke } from '@tauri-apps/api/tauri';
-import { sendNotification } from '@tauri-apps/api/notification';
+import React, { useState } from 'react';
+import LoadingOverlay from '../utilities/LoadingOverlay';
+
+import { useUtilityFunctions } from '../tool_functions/utilityFunctions';
 
 const Utility = (): React.JSX.Element => {
 
-    const openTW = async (path: String) => {
-        await invoke('open_folder', {path});
-
-        sendNotification({
-          title: 'Task Completed',
-          body: 'TW folder opened successfully!'
-        });
-      };
-
-      const openFirewall = async () => {
-        await invoke('open_firewall');
-
-        sendNotification({
-          title: 'Task Completed',
-          body: 'Firewall Ports opened successfully!'
-        });
-      };
+    const {
+        showLoading,
+        computerIP,
+        openTW,
+        openFirewall,
+        showIP,
+        resetActivation,
+        nbusData
+    } = useUtilityFunctions();
 
     return (
         <>
+            {showLoading && <LoadingOverlay />}
             <button onClick={() => openTW("C:\\ProgramData\\TW")}>
                 Open TW
             </button>
@@ -32,8 +26,25 @@ const Utility = (): React.JSX.Element => {
             <button onClick={() => openFirewall()}>
                 Open Firewall
             </button>
+            <br />
+            <br />
+            <button onClick={() => showIP()}>
+                Show IP
+            </button>
+            <span>{computerIP}</span>
+            <br />
+            <br />
+            <button onClick={() => resetActivation()}>
+                Reset Activation
+            </button>
+            <br />
+            <br />
+            <button onClick={() => nbusData()}>
+                Cancel nbus.data
+            </button>
         </>
     );
 }
 
 export default Utility;
+
