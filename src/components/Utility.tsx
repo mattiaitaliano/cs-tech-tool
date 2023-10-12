@@ -13,7 +13,9 @@ const Utility = (): React.JSX.Element => {
         showIP,
         resetActivation,
         nbusData,
-        openSampleAcq
+        openSampleAcq,
+        installCpp,
+        disLicense
     } = useUtilityFunctions();
 
     return (
@@ -45,7 +47,18 @@ const Utility = (): React.JSX.Element => {
             </button>
             <br />
             <br />
-            <button onClick={() => openSampleAcq("C:\\Program Files\\Common Files\\Trophy\\Acquisition\\AcquisitionSampleAdvanced")}>   Sample Acq
+            <button onClick={() => openSampleAcq("C:\\Program Files\\Common Files\\Trophy\\Acquisition\\AcquisitionSampleAdvanced")}>
+                Sample Acq
+            </button>
+            <br />
+            <br />
+            <button onClick={() => installCpp()}>
+                Install C++
+            </button>
+            <br />
+            <br />
+            <button onClick={() => disLicense()}>
+                DIS License
             </button>
         </>
     );

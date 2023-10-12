@@ -60,6 +60,16 @@ export const useUtilityFunctions = () => {
         await invoke('open_exe', { path });
     };
 
+    const installCpp = async () => {
+        closeLoadingOverlay();
+        await invoke('install_cpp');
+    };
+
+    const disLicense = async () => {
+        closeLoadingOverlay();
+        await invoke('dis_license');
+    };
+
     return {
         showLoading,
         computerIP,
@@ -68,6 +78,8 @@ export const useUtilityFunctions = () => {
         showIP,
         resetActivation,
         nbusData,
-        openSampleAcq
+        openSampleAcq,
+        installCpp,
+        disLicense
     };
 }
