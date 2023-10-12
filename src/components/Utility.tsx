@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LoadingOverlay from '../utilities/LoadingOverlay';
 
 import { useUtilityFunctions } from '../tool_functions/utilityFunctions';
@@ -12,7 +12,8 @@ const Utility = (): React.JSX.Element => {
         openFirewall,
         showIP,
         resetActivation,
-        nbusData
+        nbusData,
+        openSampleAcq
     } = useUtilityFunctions();
 
     return (
@@ -41,6 +42,10 @@ const Utility = (): React.JSX.Element => {
             <br />
             <button onClick={() => nbusData()}>
                 Cancel nbus.data
+            </button>
+            <br />
+            <br />
+            <button onClick={() => openSampleAcq("C:\\Program Files\\Common Files\\Trophy\\Acquisition\\AcquisitionSampleAdvanced")}>   Sample Acq
             </button>
         </>
     );

@@ -1,7 +1,7 @@
 use std::process::Command;
 
 #[tauri::command]
-pub fn open_firewall() {
+pub fn open_firewall() -> [String; 2]{
 
     let ports_list: [u16; 16] = [21, 1023, 10000, 10001, 20000, 20001, 33001, 1001, 80, 9002, 
         9005, 81, 10100, 52540, 52541, 9053];
@@ -16,11 +16,21 @@ pub fn open_firewall() {
 
     let combined_commands = commands.join(" & ");
 
-    Command::new("powershell")
+    match Command::new("powershell")
         .args(&[
             "-Command",
             &format!("Start-Process cmd.exe -ArgumentList '/c {}' -Verb RunAs -WindowStyle Hidden", combined_commands)
         ])
-        .status()
-        .expect("failed to execute process");
+        .status() {
+            Ok(status) => {
+                if !status.success() {
+                    return [format!("ERROR"), format!("Permision denied! Do it manually.")];
+                } else {
+                    return [format!("Task Completed!"), format!("The firewall ports has been opened correctly.")];
+                }
+            }
+            Err(_e) => {
+                return [format!("ERROR"), format!("Permision denied! Do it manually.")];
+            }
+        }
 }

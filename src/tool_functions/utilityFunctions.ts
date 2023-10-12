@@ -20,10 +20,10 @@ export const useUtilityFunctions = () => {
 
     const openFirewall = async () => {
         closeLoadingOverlay();
-        await invoke('open_firewall');
+        let notification: Array<string> = await invoke('open_firewall');
         sendNotification({
-            title: 'Task Completed',
-            body: 'Firewall Ports opened successfully!'
+            title: notification[0],
+            body: notification[1]
         });
     };
 
@@ -36,10 +36,10 @@ export const useUtilityFunctions = () => {
     const resetActivation = async () => {
 
         closeLoadingOverlay();
-        await invoke('reset_activation_client');
+        let notification: Array<string> = await invoke('reset_activation_client');
         sendNotification({
-            title: 'Task Completed',
-            body: 'CS Activation has been reset successfully!'
+            title: notification[0],
+            body: notification[1]
         });
         
     };
@@ -47,12 +47,17 @@ export const useUtilityFunctions = () => {
     const nbusData = async () => {
 
         closeLoadingOverlay();
-        await invoke('delete_nbus_data');
+        let notification: Array<string> = await invoke('delete_nbus_data');
         sendNotification({
-            title: 'Task Completed',
-            body: 'nbus.data has been deleted successfully!'
+            title: notification[0],
+            body: notification[1]
         });
         
+    };
+
+    const openSampleAcq = async (path: String) => {
+        closeLoadingOverlay();
+        await invoke('open_exe', { path });
     };
 
     return {
@@ -62,6 +67,7 @@ export const useUtilityFunctions = () => {
         openFirewall,
         showIP,
         resetActivation,
-        nbusData
+        nbusData,
+        openSampleAcq
     };
 }

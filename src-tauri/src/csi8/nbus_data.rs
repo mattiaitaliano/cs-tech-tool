@@ -1,9 +1,9 @@
 use std::process::Command;
 
 #[tauri::command]
-pub fn reset_activation_client() -> [String; 2] {
+pub fn delete_nbus_data() -> [String; 2] {
 
-    let ps_command = r#"Remove-Item -Path 'C:/ProgramData/TW/ActivationClient.db', 'C:/ProgramData/TW/ActivationClient.log' -Force"#;
+    let ps_command = r#"Remove-Item -Path 'C:/ProgramData/TW/CSDMLite/nbus.data' -Force"#;
 
     match Command::new("powershell")
         .args(&[
@@ -15,7 +15,7 @@ pub fn reset_activation_client() -> [String; 2] {
                 if !status.success() {
                     return [format!("ERROR"), format!("Can't find the right folder")];
                 } else {
-                    return [format!("Task Completed!"), format!("CS Activation client has been reset correctly.")];
+                    return [format!("Task Completed!"), format!("nbus.data has been deleted correctly.")];
                 }
             }
             Err(_e) => {
