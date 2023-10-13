@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import style from '../static/carosel.module.scss';
+import { NavLink } from 'react-router-dom';
 
 import logo from '../static/img/icon.png';
 
@@ -50,10 +51,10 @@ const Carousel: React.FC<CarouselProps> = ({ images }): React.JSX.Element => {
                 <br />
                 <br />
             <div className={style.gridContainer}>
-                <div className={style.gridItem}>Firewall</div>
-                <div className={style.gridItem}>Full Permisison</div>
-                <div className={style.gridItem}>Reset Activation</div>
-                <div className={style.gridItem}>nbus.data</div>
+                <NavLink to='/utility/firewall' className={style.gridItem}>Firewall</NavLink>
+                <NavLink to='/csimaging/full-permission' className={style.gridItem}>Full Permisison</NavLink>
+                <NavLink to='/utility/reset-activation' className={style.gridItem}>Reset Activation</NavLink>
+                <NavLink to='/csimaging/nbus-data' className={style.gridItem}>nbus.data</NavLink>
             </div>
             </div>
         </div>

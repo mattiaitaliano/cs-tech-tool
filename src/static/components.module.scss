@@ -163,7 +163,12 @@ footer {
     grid-template-columns: repeat(5, 175px);
     grid-template-rows: repeat(2, 250px);
     gap: 16px;
-  
+    padding: 3%;
+
+    .linkToView {
+        text-decoration: none;
+    }
+
     .toolCardItem {
       position: relative;
       align-items: center;
@@ -232,6 +237,7 @@ footer {
     display: flex;    
     flex-direction: column;
     height: 100%; 
+    padding: 3%;
 
     .message {
         

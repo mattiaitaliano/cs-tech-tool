@@ -3,20 +3,12 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 import style from '../static/toolsLayout.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import UtilityTitle from "../product_titles/UtilityTitle";
-
-import DisLicense from "../tools/DisLicense";
-import Firewall from "../tools/Firewall";
-import InstallCPP from "../tools/InstallCPP";
-import OpenSampleAcq from "../tools/OpenSampleAcq";
-import OpenTW from "../tools/OpenTW";
-import ResetActivation from "../tools/ResetActivation";
-import ShowIp from "../tools/ShowIp";
-
-
+import NbusData from '../tools/NbusData';
+import FullPermission from '../tools/FullPermission';
+import CSImagingTitle from "../product_titles/CSImagingTitle";
 import { faServer } from "@fortawesome/free-solid-svg-icons";
 
-const Utility = (): React.JSX.Element => {
+const CSImaging = (): React.JSX.Element => {
 
     const [isActive, setIsActive ]= useState('/');
 
@@ -25,14 +17,9 @@ const Utility = (): React.JSX.Element => {
     };
 
     const views = [
-        { path: "/", element: <UtilityTitle /> },
-        { path: "/dis-license", element: <DisLicense /> },
-        { path: "/firewall", element: <Firewall /> },
-        { path: "/install-cpp", element: <InstallCPP /> },
-        { path: "/open-sample", element: <OpenSampleAcq /> },
-        { path: "/open-tw", element: <OpenTW /> },
-        { path: "/reset-activation", element: <ResetActivation /> },
-        { path: "/show-ip", element: <ShowIp /> }
+        { path: "/", element: <CSImagingTitle /> },
+        { path: "/nbus-data", element: <NbusData /> },
+        { path: "/full-permission", element: <FullPermission /> }
     ];
 
     return (
@@ -44,7 +31,7 @@ const Utility = (): React.JSX.Element => {
                     <div>
                         <br />
                         <br />
-                        <FontAwesomeIcon icon={faServer} />&nbsp;&nbsp;Utility
+                        <FontAwesomeIcon icon={faServer} />&nbsp;&nbsp;CS Imaging
                         <br />
                         <br />
                     </div>
@@ -81,4 +68,4 @@ const Utility = (): React.JSX.Element => {
     );
 };
 
-export default Utility;
+export default CSImaging;

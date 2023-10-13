@@ -26,7 +26,7 @@ export default function Navbar() {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/utility">
+                        <NavLink to="/utility/">
                             <a className={activeLink === '/utility' ? style.linkActive : style.navLink} onClick={() => toggleActive('/utility')}>Utility</a>
                         </NavLink>
                     </li>

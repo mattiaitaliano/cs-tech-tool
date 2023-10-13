@@ -10,7 +10,7 @@ const Products = ():React.JSX.Element => {
         <>
         <div className={style.toolContainer}>
             
-            <NavLink to='/'>
+            <NavLink to='/csimaging/' className={style.linkToView}>
             <div className={style.toolCardItem}>
                 <div className={style.cardTitle}>CS Imaging</div>
                 <div className={style.cardContent}>

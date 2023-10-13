@@ -24,9 +24,10 @@ $foot-height: 50px;
 .mainComp {
   position: fixed;
   top: calc($nav-height + $head-height);
-  height: calc(100vh - $nav-height - $head-height - $foot-height);
+  height: calc(100vh - $nav-height - $head-height - $foot-height - 5px);
   min-height: 500px;
-  padding: 3%;
+  top: calc($nav-height + $head-height + 5px);
+  width: 100%;
 }
 
 .footComp {

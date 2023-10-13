@@ -1,0 +1,59 @@
+.menuContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+
+    .menuSx {
+        flex-basis: 17%;
+        border-right: 3px solid rgb(56, 55, 55);
+        padding-left: 3%;
+        padding-right: 3%;
+        background-color: rgb(93, 93, 93);
+        color: white;
+
+        hr {
+            border: none; 
+            height: 2px;
+            background-color: gray;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            margin: 10px 0; 
+
+        }
+        
+
+        .linkTool {
+            text-decoration: none;
+            color: rgb(176, 176, 176);
+            transition: .2s ease-in-out;
+            font-size:  .95rem;
+
+
+            &:hover {
+                color: white;
+                transition: .2s ease-in-out;
+            }
+
+        }
+
+        .activeLinkTool {
+            text-decoration: none;
+            color: white;
+            transition: .2s ease-in-out;
+            font-size:  .95rem;
+
+            &:hover {
+                color: white;
+                transition: .2s ease-in-out;
+            }
+        }
+
+    }
+
+    .menuDx {
+        flex-basis: 77%;
+        padding: 3%;
+        
+    }
+}
