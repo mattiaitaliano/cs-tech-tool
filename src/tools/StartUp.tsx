@@ -1,21 +1,22 @@
 import React from "react";
 import LoadingOverlay from '../utilities/LoadingOverlay';
 import { useUtilityFunctions } from '../tool_functions/utilityFunctions';
-const ResetActivation = (): React.JSX.Element => {
+const StartUp = (): React.JSX.Element => {
 
     const {
         showLoading,
-        resetActivation
+        disableStartup
     } = useUtilityFunctions();
 
     return (
         <>
             {showLoading && <LoadingOverlay />}
-            <button onClick={() => resetActivation()}>
-                Reset Activation
+            <button onClick={() => disableStartup()}>
+                Disable Startup
             </button>
         </>
     );
 };
 
-export default ResetActivation;
+export default StartUp;
+

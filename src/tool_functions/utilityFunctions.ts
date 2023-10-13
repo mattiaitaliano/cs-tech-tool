@@ -78,6 +78,11 @@ export const useUtilityFunctions = () => {
         });
     };
 
+    const disableStartup = async () => {
+        closeLoadingOverlay();
+        await invoke('disable_startup');
+    };
+
     return {
         showLoading,
         computerIP,
@@ -89,6 +94,7 @@ export const useUtilityFunctions = () => {
         openSampleAcq,
         installCpp,
         disLicense,
-        fullPermissionDb
+        fullPermissionDb,
+        disableStartup
     };
 }

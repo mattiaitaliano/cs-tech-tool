@@ -40,7 +40,7 @@ const Utility = (): React.JSX.Element => {
         <div className={style.menuContainer}>
             <div className={style.menuSx}>
                 
-                <NavLink to='/csimaging/' className={isActive === '/' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/')}>
+                <NavLink to='/utility/' className={isActive === '/' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/')}>
                     <div>
                         <br />
                         <br />
@@ -50,19 +50,46 @@ const Utility = (): React.JSX.Element => {
                     </div>
                 </NavLink>                
                 <hr />
-                <NavLink to='/csimaging/nbus-data' className={isActive === '/nbus-data' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/nbus-data')}>
+                <NavLink to='/utility/firewall' className={isActive === '/firewall' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/firewall')}>
                     <div>
                         <br />
-                        nbus.data
+                        Firewall
                         <br />
                         <br />
                     </div>
                 </NavLink>                
                 <hr />
-                <NavLink to='/csimaging/full-permission' className={isActive === '/full-permission' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/full-permission')}>
+                <NavLink to='/utility/open-tw' className={isActive === '/open-tw' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/open-tw')}>
                     <div>
                         <br />
-                        Full permission
+                        TW folder
+                        <br />
+                        <br />
+                    </div>
+                </NavLink>                
+                <hr />
+                <NavLink to='/utility/install-cpp' className={isActive === '/install-cpp' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/install-cpp')}>
+                    <div>
+                        <br />
+                        Visual c++
+                        <br />
+                        <br />
+                    </div>
+                </NavLink>                
+                <hr />
+                <NavLink to='/utility/dis-license' className={isActive === '/dis-license' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/dis-license')}>
+                    <div>
+                        <br />
+                        DIS License
+                        <br />
+                        <br />
+                    </div>
+                </NavLink>                
+                <hr />
+                <NavLink to='/utility/open-sample' className={isActive === '/open-sample' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/open-sample')}>
+                    <div>
+                        <br />
+                        Sample Acq
                         <br />
                         <br />
                     </div>

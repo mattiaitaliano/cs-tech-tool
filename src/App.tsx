@@ -15,6 +15,8 @@ import Overlay from './utilities/Overlay';
 import Info from './components/Info';
 import Login from './utilities/Login';
 import CSImaging from './components/CSImaging';
+import Activation from './components/Activation';
+import Windows from './components/Windows';
 
 const App = (): React.JSX.Element => {
 
@@ -34,10 +36,12 @@ const App = (): React.JSX.Element => {
   const views = [
     { path: "/", element: <Home /> },
     { path: "/products", element: <Products /> },
-    { path: "/utility", element: <Utility /> },
+    { path: "/utility/*", element: <Utility /> },
     { path: "/links", element: <Links /> },
     { path: "*", element: <NotFound /> },
-    { path: "/csimaging/*", element: <CSImaging /> }
+    { path: "/csimaging/*", element: <CSImaging />},
+    { path: "/activation/*", element: <Activation />} ,
+    { path: "windows/*", element: <Windows />}
   ];
 
 
