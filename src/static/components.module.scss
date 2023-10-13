@@ -222,3 +222,35 @@ footer {
 
     }
 }
+
+/* ================================== HOMEPAGE ===============================*/
+
+.homeContainer {
+    position: relative;
+    color: rgb(46, 46, 46);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;    
+    flex-direction: column;
+    height: 100%; 
+
+    .message {
+        
+        max-height: 35%;
+        min-height: 35%;
+
+    .homeTitle {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-right: 50px;
+    }
+
+    }
+
+    .carousel {
+        max-height: 50%;
+        min-height: 50%;
+    }
+}

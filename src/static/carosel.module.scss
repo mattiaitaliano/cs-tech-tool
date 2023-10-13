@@ -1,0 +1,116 @@
+.carouselContainer {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    top: 50px;
+    overflow: hidden;
+
+    .slideshow {
+        flex: 2;
+        margin-left: 0;
+        min-height: 200px;
+        
+
+        img {
+            width: 60%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .visible {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+
+            &:first-child {
+                left: 10px;
+            }
+
+            &:last-child {
+                right: 10px;
+            }
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 60%;
+            z-index: 99;
+            bottom: 0px;
+
+            .dot {
+                width: 10px;
+                height: 10px;
+                margin: 0 5px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #888;
+                }
+
+                &.active {
+                    background-color: #717171;
+                }
+            }
+        }
+    }
+
+    .rapidLinks {
+        flex: 1;
+        color:rgb(80, 79, 79);
+        font-size: 1.6rem;
+        
+        img {
+            transform: translateY(5px);
+        }
+    }
+}
+
+
+/* ============================= GRID ============================= */
+
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    font-size: 1rem;
+  
+    .gridItem {
+        background-color: rgb(248, 164, 8);
+        padding: 16px;
+        border-radius: 8px;
+        border: 3px solid rgb(45, 45, 45);
+        text-align: center;
+        color: rgb(45, 45, 45);
+        cursor: pointer;
+        font-size: .9rem;
+        transition: .2s ease-in-out;
+
+        &:hover {
+            background-color: rgb(45, 45, 45);
+            color: white;
+            transition: .2s ease-in-out;
+        }
+    }
+  
+}

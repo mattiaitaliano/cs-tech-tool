@@ -8,7 +8,7 @@ export default function Footer() {
             </div>
 
             <div className={style.version}>
-            v. 1.0.0
+            v. 0.0.1 (beta)
             </div>
         </footer>
     )

@@ -69,6 +69,14 @@ export const useUtilityFunctions = () => {
         closeLoadingOverlay();
         await invoke('dis_license');
     };
+    const fullPermissionDb = async (dbPath: string) => {
+        closeLoadingOverlay();
+        let notification: Array<string> = await invoke('full_permission_db', { dbPath });
+        sendNotification({
+            title: notification[0],
+            body: notification[1]
+        });
+    };
 
     return {
         showLoading,
@@ -80,6 +88,7 @@ export const useUtilityFunctions = () => {
         nbusData,
         openSampleAcq,
         installCpp,
-        disLicense
+        disLicense,
+        fullPermissionDb
     };
 }

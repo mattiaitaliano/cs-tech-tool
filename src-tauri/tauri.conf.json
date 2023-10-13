@@ -18,6 +18,9 @@
     },
     "notification": {
       "all": true
+    },
+    "dialog": {
+      "open": true
     }
     },
     "bundle": {

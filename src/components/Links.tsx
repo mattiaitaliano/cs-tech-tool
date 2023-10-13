@@ -8,6 +8,7 @@ import status from '../static/img/links/status.png';
 import csdental from '../static/img/links/csdental.png';
 import mailto from '../static/img/links/mailto.png';
 import bomgar from '../static/img/links/bomgar.png';
+import activationForm from '../static/img/links/activationForm.png';
 
 
 const Links = ():React.JSX.Element => {
@@ -39,6 +40,10 @@ const Links = ():React.JSX.Element => {
     const openBomgar = () => {
         open('https://cssupport.csdental.com/');
       }
+
+    const openActivationForm = () => {
+    open('https://forms.office.com/Pages/ResponsePage.aspx?id=4nVlFB8aNEysEa5W1rguO_BnHZIIRcRFs5MT-wox9c5UQ0U0V0owNVNJTlAxM0IyS1pIOTgyS0ZRTS4u');
+    }
       
 
     return (
@@ -138,6 +143,20 @@ const Links = ():React.JSX.Element => {
                     <br />
                     <br />
                     Bomgar remote support <br /><br />Connect with a Carestream Dental Support Representative by inserting the provided key.
+                </div>
+                </div>
+            </div>
+            </a>
+
+            <a onClick={openActivationForm}>
+            <div className={style.toolCardItem}>
+                <div className={style.cardTitle}>Reactivation Request</div>
+                <div className={style.cardContent}>
+                    <img src={activationForm} />
+                <div className={style.cardContentOverlay}>
+                    <br />
+                    <br />
+                    License Reactivation Request<br /><br />Open a form you can use to request for a product license reactivation.
                 </div>
                 </div>
             </div>
