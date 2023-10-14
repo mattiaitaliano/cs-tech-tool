@@ -1,8 +1,10 @@
 use std::process::Command;
 
 #[tauri::command]
-pub fn open_folder(path: &str) {
-    match Command::new("explorer").arg(path).status() {
+pub fn open_folder(path: String) {
+    match Command::new("explorer")
+        .arg(&format!(r#"{}""#,path))
+        .status() {
         Ok(status) => {
             if !status.success() {
                 eprintln!("Failed to open folder with status: {:?}", status);

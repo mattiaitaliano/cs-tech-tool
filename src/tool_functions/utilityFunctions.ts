@@ -80,10 +80,15 @@ export const useUtilityFunctions = () => {
 
     const disableStartup = async () => {
         closeLoadingOverlay();
-        await invoke('disable_startup');
+        let notification: Array<string> =  await invoke('disable_startup');
+        sendNotification({
+            title: notification[0],
+            body: notification[1]
+        });
     };
 
     return {
+        closeLoadingOverlay,
         showLoading,
         computerIP,
         openTW,

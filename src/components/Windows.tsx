@@ -32,7 +32,7 @@ const Windows = (): React.JSX.Element => {
                     <div>
                         <br />
                         <br />
-                        <FontAwesomeIcon icon={faServer} />&nbsp;&nbsp;CS Activation
+                        <FontAwesomeIcon icon={faServer} />&nbsp;&nbsp;Windows
                         <br />
                         <br />
                     </div>
