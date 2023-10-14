@@ -87,6 +87,12 @@ export const useUtilityFunctions = () => {
         });
     };
 
+    const openExceptions = async () => {
+        closeLoadingOverlay();
+        let path: string = "resources\\files\\exceptions_folder.pdf";
+        await invoke("open_file", {path});
+    };
+
     return {
         closeLoadingOverlay,
         showLoading,
@@ -100,6 +106,7 @@ export const useUtilityFunctions = () => {
         installCpp,
         disLicense,
         fullPermissionDb,
-        disableStartup
+        disableStartup,
+        openExceptions
     };
 }

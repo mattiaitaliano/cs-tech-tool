@@ -54,7 +54,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }): React.JSX.Element => {
                 <NavLink to='/utility/firewall' className={style.gridItem}>Firewall</NavLink>
                 <NavLink to='/csimaging/full-permission' className={style.gridItem}>Full Permisison</NavLink>
                 <NavLink to='/utility/reset-activation' className={style.gridItem}>Reset Activation</NavLink>
-                <NavLink to='/csimaging/nbus-data' className={style.gridItem}>nbus.data</NavLink>
+                <NavLink to='/csimaging/nbus-data' className={style.gridItem}>Nbus.data</NavLink>
             </div>
             </div>
         </div>

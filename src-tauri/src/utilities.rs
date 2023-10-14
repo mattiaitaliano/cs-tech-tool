@@ -18,8 +18,9 @@ pub fn open_folder(path: String) {
 
 #[tauri::command]
 pub fn open_file(path: &str) -> [String; 2]{
-    match Command::new("start")
-        .arg(path)
+
+    match Command::new("cmd")
+        .args(&[&format!("/c start {}", path)])
         .status() {
             Ok(status) => {
                 if !status.success() {
@@ -32,6 +33,39 @@ pub fn open_file(path: &str) -> [String; 2]{
                 return [format!("ERROR"), format!("File missing. Contact Carestream Dental Support.")];
             }
         }
+}
+
+#[tauri::command]
+pub fn copy_file(path: &str) -> [String; 2]{
+
+    let ps_script = format!(r#"
+        $sourceFilePath = ".\{}"
+        $desktopPath = [System.Environment]::GetFolderPath('Desktop')
+        $destinationFilePath = Join-Path $desktopPath -ChildPath "exceptions_folder.txt"
+        Copy-Item -Path sourceFilePath -Destination $destinationFilePath -Force 
+        "#, path);
+
+    match Command::new("powershell")
+        .args(&[
+            "-Command",
+            &format!(
+                r#"Start-Process powershell -ArgumentList '{}' -Verb RunAs -WindowStyle Hidden"#,
+                ps_script
+            ),
+        ])
+        .status() {
+            Ok(status) => {
+                if !status.success() {
+                    return [format!("ERROR"), format!("Can't find the right folder")];
+                } else {
+                    return [format!("Task Completed!"), format!("The file was copied in the Desktop correctly.")];
+                }
+            }
+            Err(_e) => {
+                return [format!("ERROR"), format!("File missing. Contact Carestream Dental Support.")];
+            }
+        }
+
 }
 
 #[tauri::command]

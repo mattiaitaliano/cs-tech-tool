@@ -40,7 +40,7 @@ const CSImaging = (): React.JSX.Element => {
                 <NavLink to='/csimaging/nbus-data' className={isActive === '/nbus-data' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/nbus-data')}>
                     <div>
                         <br />
-                        nbus.data
+                        Nbus.data
                         <br />
                         <br />
                     </div>

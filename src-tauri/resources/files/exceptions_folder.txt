@@ -1,0 +1,8 @@
+C:\ProgramData\TW
+C:\Program Files\Carestream
+C:\Program Files\Common Files\Trophy
+C:\Program Files\Common Files\Carestream
+C:\Program Files(x86)\Carestream
+C:\Program Files(x86)\Common Files\Carestream
+C:\Program Files(x86)\Common Files\Trophy
+
