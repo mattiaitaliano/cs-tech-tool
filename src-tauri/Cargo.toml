@@ -1,6 +1,6 @@
 [package]
 name = "cs-tech-tool"
-version = "1.0.0"
+version = "0.0.1"
 description = "CS Technician Tool"
 authors = ["Mattia Italiano"]
 default-run = "cs-tech-tool"

@@ -6,7 +6,7 @@ pub fn install_cpp() -> [String; 2]{
     match Command::new("powershell")
     .args(&[
         "-Command",
-        "Start-Process cmd.exe -ArgumentList '/c cd resources\\visual_cpp && install_all' -Verb RunAs"
+        "Start-Process cmd.exe -ArgumentList '/c cd .\\resources\\visual_cpp && install_all' -Verb RunAs"
     ])
     .status() {
             Ok(status) => {

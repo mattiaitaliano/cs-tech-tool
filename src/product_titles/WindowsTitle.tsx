@@ -8,7 +8,7 @@ const WindowsTitle = (): React.JSX.Element => {
                 <h1><img src={logo}/>&nbsp;&nbsp;Windows Tools</h1>
                 <br />
                 <h2>
-                    These tools are designed to help you with various issue or necessities with <strong>Windows</strong> relating to the usage of Carestream Dental products.
+                    These tools are designed to help you with various issues or necessities with <strong>Windows</strong> relating to the usage of Carestream Dental products.
                 </h2>
                 <br />
                 <br />

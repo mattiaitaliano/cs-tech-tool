@@ -26,6 +26,8 @@ const Products = ():React.JSX.Element => {
                     - Delete nbus.data
                     <br />
                     - DB full permission
+                    <br />
+                    - Clean Installation
                 </div>
                 </div>
             </div>

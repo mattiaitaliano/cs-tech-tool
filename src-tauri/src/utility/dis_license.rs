@@ -6,7 +6,7 @@ pub fn dis_license() -> [String; 2]{
     match Command::new("powershell")
     .args(&[
         "-Command",
-        "Start-Process cmd.exe -ArgumentList '/c cd resources\\dis_license && license' -Verb RunAs -WindowStyle Hidden"
+        "Start-Process cmd.exe -ArgumentList '/c cd .\\resources\\dis_license && license' -Verb RunAs -WindowStyle Hidden"
     ])
     .status() {
             Ok(status) => {

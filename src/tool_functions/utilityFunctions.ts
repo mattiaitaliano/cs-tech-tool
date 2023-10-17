@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { invoke } from '@tauri-apps/api/tauri';
-import { sendNotification } from '@tauri-apps/api/notification';
+import { isPermissionGranted, requestPermission, sendNotification } from '@tauri-apps/api/notification';
 
 export const useUtilityFunctions = () => {
     const [showLoading, setShowLoading] = useState(false);
@@ -21,10 +21,16 @@ export const useUtilityFunctions = () => {
     const openFirewall = async () => {
         closeLoadingOverlay();
         let notification: Array<string> = await invoke('open_firewall');
-        sendNotification({
+        let permissionGranted = await isPermissionGranted();
+if (!permissionGranted) {
+  const permission = await requestPermission();
+  permissionGranted = permission === 'granted';
+}
+if (permissionGranted) {sendNotification({
             title: notification[0],
             body: notification[1]
         });
+    }
     };
 
     const showIP = async () => {
@@ -37,10 +43,16 @@ export const useUtilityFunctions = () => {
 
         closeLoadingOverlay();
         let notification: Array<string> = await invoke('reset_activation_client');
-        sendNotification({
+        let permissionGranted = await isPermissionGranted();
+if (!permissionGranted) {
+  const permission = await requestPermission();
+  permissionGranted = permission === 'granted';
+}
+if (permissionGranted) {sendNotification({
             title: notification[0],
             body: notification[1]
         });
+    }
         
     };
 
@@ -48,12 +60,37 @@ export const useUtilityFunctions = () => {
 
         closeLoadingOverlay();
         let notification: Array<string> = await invoke('delete_nbus_data');
-        sendNotification({
+        let permissionGranted = await isPermissionGranted();
+if (!permissionGranted) {
+  const permission = await requestPermission();
+  permissionGranted = permission === 'granted';
+}
+if (permissionGranted) {sendNotification({
             title: notification[0],
             body: notification[1]
         });
+    }
         
     };
+
+    const cleanInstallation = async () => {
+
+        closeLoadingOverlay();
+        let notification: Array<string> = await invoke('clean_installation');
+        let permissionGranted = await isPermissionGranted();
+        if (!permissionGranted) {
+        const permission = await requestPermission();
+        permissionGranted = permission === 'granted';
+        }
+        if (permissionGranted) {
+            sendNotification({
+                    title: notification[0],
+                    body: notification[1]
+                });
+            }
+        
+    };
+
 
     const openSampleAcq = async (path: String) => {
         closeLoadingOverlay();
@@ -72,24 +109,36 @@ export const useUtilityFunctions = () => {
     const fullPermissionDb = async (dbPath: string) => {
         closeLoadingOverlay();
         let notification: Array<string> = await invoke('full_permission_db', { dbPath });
-        sendNotification({
-            title: notification[0],
-            body: notification[1]
+        let permissionGranted = await isPermissionGranted();
+        if (!permissionGranted) {
+        const permission = await requestPermission();
+        permissionGranted = permission === 'granted';
+        }
+        if (permissionGranted) {sendNotification({
+                    title: notification[0],
+                    body: notification[1]
         });
+    }
     };
 
     const disableStartup = async () => {
         closeLoadingOverlay();
         let notification: Array<string> =  await invoke('disable_startup');
-        sendNotification({
+        let permissionGranted = await isPermissionGranted();
+if (!permissionGranted) {
+  const permission = await requestPermission();
+  permissionGranted = permission === 'granted';
+}
+if (permissionGranted) {sendNotification({
             title: notification[0],
             body: notification[1]
         });
+    }
     };
 
     const openExceptions = async () => {
         closeLoadingOverlay();
-        let path: string = "resources\\files\\exceptions_folder.pdf";
+        let path: string = ".\\resources\\files\\exceptions_folder.pdf";
         await invoke("open_file", {path});
     };
 
@@ -107,6 +156,7 @@ export const useUtilityFunctions = () => {
         disLicense,
         fullPermissionDb,
         disableStartup,
-        openExceptions
+        openExceptions,
+        cleanInstallation
     };
 }

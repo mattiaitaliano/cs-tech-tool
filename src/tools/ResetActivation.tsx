@@ -2,7 +2,6 @@ import React from "react";
 import LoadingOverlay from '../utilities/LoadingOverlay';
 import { useUtilityFunctions } from '../tool_functions/utilityFunctions';
 import style from '../static/toolsLayout.module.scss';
-import { invoke } from "@tauri-apps/api";
 
 const ResetActivation = (): React.JSX.Element => {
 

@@ -7,6 +7,7 @@ import NbusData from '../tools/NbusData';
 import FullPermission from '../tools/FullPermission';
 import CSImagingTitle from "../product_titles/CSImagingTitle";
 import { faServer } from "@fortawesome/free-solid-svg-icons";
+import CleanInstallation from "../tools/CleanInstallation";
 
 const CSImaging = (): React.JSX.Element => {
 
@@ -19,7 +20,8 @@ const CSImaging = (): React.JSX.Element => {
     const views = [
         { path: "/", element: <CSImagingTitle /> },
         { path: "/nbus-data", element: <NbusData /> },
-        { path: "/full-permission", element: <FullPermission /> }
+        { path: "/full-permission", element: <FullPermission /> },
+        { path: "/clean_installation", element: <CleanInstallation /> }
     ];
 
     return (
@@ -50,6 +52,15 @@ const CSImaging = (): React.JSX.Element => {
                     <div>
                         <br />
                         Full permission
+                        <br />
+                        <br />
+                    </div>
+                </NavLink>                
+                <hr />
+                <NavLink to='/csimaging/clean_installation' className={isActive === '/clean_installation' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/clean_installation')}>
+                    <div>
+                        <br />
+                        Clean Installation
                         <br />
                         <br />
                     </div>

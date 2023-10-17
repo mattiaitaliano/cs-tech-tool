@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import LoadingOverlay from '../utilities/LoadingOverlay';
-import { sendNotification } from '@tauri-apps/api/notification';
+import { isPermissionGranted, requestPermission, sendNotification } from '@tauri-apps/api/notification';
 import { useUtilityFunctions } from '../tool_functions/utilityFunctions';
 import { dialog } from '@tauri-apps/api';
 import style from '../static/toolsLayout.module.scss';
@@ -15,14 +15,21 @@ const FullPermission = (): React.JSX.Element => {
 
     const [inputValue, setInputValue] = useState('');
 
-    const addPermission = (dbPath: string) => {
+    const addPermission = async (dbPath: string) => {
         if (!inputValue.trim()) {
-            sendNotification({
+            let permissionGranted = await isPermissionGranted();
+            if (!permissionGranted) {
+            const permission = await requestPermission();
+            permissionGranted = permission === 'granted';
+            }
+            if (permissionGranted) {
+                sendNotification({
                 title: "Attention!",
                 body: "Please enter a valid value ad DB Path."
             });
             return;
         }
+    }
 
         fullPermissionDb(dbPath);
     };

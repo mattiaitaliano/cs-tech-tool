@@ -8,7 +8,7 @@ const ActivationTitle = (): React.JSX.Element => {
                 <h1><img src={logo}/>&nbsp;&nbsp;CS Activation Client Tools</h1>
                 <br />
                 <h2>
-                    These tools are designed to help you with various issue or necessities with <strong>CS Activation Client</strong>.
+                    These tools are designed to help you with various issues or necessities with <strong>CS Activation Client</strong>.
                 </h2>
                 <br />
                 <br />
