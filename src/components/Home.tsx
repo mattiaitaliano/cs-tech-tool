@@ -1,6 +1,6 @@
 import React from "react";
 import style from "../static/components.module.scss";
-import Carousel from "../utilities/Carosel";
+import Carousel from "../utilities/Carousel";
 
 import firewalltool from '../static/img/slideshow/firewalltool.png';
 import bugfullpermission from '../static/img/slideshow/bugfullpermission.png';

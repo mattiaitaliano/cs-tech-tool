@@ -4,10 +4,11 @@ import style from '../static/toolsLayout.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import NbusData from '../tools/NbusData';
-import FullPermission from '../tools/FullPermission';
 import CSImagingTitle from "../product_titles/CSImagingTitle";
 import { faServer } from "@fortawesome/free-solid-svg-icons";
-import CleanInstallation from "../tools/CleanInstallation";
+import DbAnalyser from "../tools/DbAnalyser";
+import CsdmLiteReset from "../tools/CsdmLiteReset";
+import SqlTableRemover from "../tools/SqlTableRemover";
 
 const CSImaging = (): React.JSX.Element => {
 
@@ -20,8 +21,9 @@ const CSImaging = (): React.JSX.Element => {
     const views = [
         { path: "/", element: <CSImagingTitle /> },
         { path: "/nbus-data", element: <NbusData /> },
-        { path: "/full-permission", element: <FullPermission /> },
-        { path: "/clean_installation", element: <CleanInstallation /> }
+        { path: "/db-analyser", element: <DbAnalyser /> },
+        { path: "/csdml-reset", element: <CsdmLiteReset /> },
+        { path: "/sql-remover", element: <SqlTableRemover /> }
     ];
 
     return (
@@ -48,24 +50,37 @@ const CSImaging = (): React.JSX.Element => {
                     </div>
                 </NavLink>                
                 <hr />
-                <NavLink to='/csimaging/full-permission' className={isActive === '/full-permission' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/full-permission')}>
+                <NavLink to='/csimaging/db-analyser' className={isActive === '/db-analyser' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/db-analyser')}>
                     <div>
                         <br />
-                        Full permission
+                        DB Analyser
                         <br />
                         <br />
                     </div>
                 </NavLink>                
                 <hr />
-                <NavLink to='/csimaging/clean_installation' className={isActive === '/clean_installation' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/clean_installation')}>
+                <NavLink to='/csimaging/csdml-reset' className={isActive === '/csdml-reset' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/csdml-reset')}>
                     <div>
                         <br />
-                        Clean Installation
+                        CSDMLite Reset
                         <br />
                         <br />
                     </div>
                 </NavLink>                
                 <hr />
+                <NavLink to='/csimaging/sql-remover' className={isActive === '/sql-remover' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/sql-remover')}>
+                    <div>
+                        <br />
+                        SQL Table Remover
+                        <br />
+                        <br />
+                    </div>
+                </NavLink>                
+                <hr />
+                
+
+
+
             </div>
             <div className={style.menuDx}>
                 <Routes>

@@ -1,5 +1,7 @@
-import React, { ReactElement, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { app, window as tauriWindow } from '@tauri-apps/api';
+
 
 import './App.scss';
 
@@ -16,10 +18,9 @@ import Info from './components/Info';
 import Login from './utilities/Login';
 import CSImaging from './components/CSImaging';
 import Activation from './components/Activation';
-import Windows from './components/Windows';
 
 const App = (): React.JSX.Element => {
-
+  
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   const handleLoginSuccess = () => {
@@ -40,8 +41,7 @@ const App = (): React.JSX.Element => {
     { path: "/links", element: <Links /> },
     { path: "*", element: <NotFound /> },
     { path: "/csimaging/*", element: <CSImaging />},
-    { path: "/activation/*", element: <Activation />} ,
-    { path: "windows/*", element: <Windows />}
+    { path: "/activation/*", element: <Activation />}
   ];
 
 

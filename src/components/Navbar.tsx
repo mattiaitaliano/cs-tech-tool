@@ -1,11 +1,12 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "../static/components.module.scss";
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 
 export default function Navbar() {
-    const [activeLink, setActiveLink] = useState('/'); // default to home
+    const [activeLink, setActiveLink] = useState('/'); 
+    const location = useLocation();
 
     const toggleActive = (path: string) => {
         setActiveLink(path);

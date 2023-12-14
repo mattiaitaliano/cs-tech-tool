@@ -7,8 +7,8 @@
     "distDir": "../build"
   },
   "package": {
-    "productName": "CS Tech Tool",
-    "version": "0.1.0"
+    "productName": "CS Tech Tool (Beta)",
+    "version": "1.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -21,6 +21,9 @@
     },
     "dialog": {
       "open": true
+    },
+    "window": {
+      "all": true
     }
     },
     "bundle": {

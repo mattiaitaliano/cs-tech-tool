@@ -5,13 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import UtilityTitle from "../product_titles/UtilityTitle";
 
-import DisLicense from "../tools/DisLicense";
-import Firewall from "../tools/Firewall";
-import InstallCPP from "../tools/InstallCPP";
-import OpenSampleAcq from "../tools/OpenSampleAcq";
-import OpenTW from "../tools/OpenTW";
-import ResetActivation from "../tools/ResetActivation";
-import ShowIp from "../tools/ShowIp";
+import SecurityTool from "../tools/SecurityTool";
+import Boardsave from "../tools/Boardsave";
 
 
 import { faServer } from "@fortawesome/free-solid-svg-icons";
@@ -26,13 +21,8 @@ const Utility = (): React.JSX.Element => {
 
     const views = [
         { path: "/", element: <UtilityTitle /> },
-        { path: "/dis-license", element: <DisLicense /> },
-        { path: "/firewall", element: <Firewall /> },
-        { path: "/install-cpp", element: <InstallCPP /> },
-        { path: "/open-sample", element: <OpenSampleAcq /> },
-        { path: "/open-tw", element: <OpenTW /> },
-        { path: "/reset-activation", element: <ResetActivation /> },
-        { path: "/show-ip", element: <ShowIp /> }
+        { path: "/security-tool", element: <SecurityTool /> },
+        { path: "/boardsave-finder", element: <Boardsave /> }
     ];
 
     return (
@@ -50,51 +40,29 @@ const Utility = (): React.JSX.Element => {
                     </div>
                 </NavLink>                
                 <hr />
-                <NavLink to='/utility/firewall' className={isActive === '/firewall' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/firewall')}>
+                <NavLink to='/utility/security-tool' className={isActive === '/security-tool' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/security-tool')}>
                     <div>
                         <br />
-                        Firewall
+                        CS Security
                         <br />
                         <br />
                     </div>
                 </NavLink>                
                 <hr />
-                <NavLink to='/utility/open-tw' className={isActive === '/open-tw' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/open-tw')}>
+                <NavLink to='/utility/boardsave-finder' className={isActive === '/boardsave-finder' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/boardsave-finder')}>
                     <div>
                         <br />
-                        TW folder
+                        Boardsave Finder
                         <br />
                         <br />
                     </div>
                 </NavLink>                
                 <hr />
-                <NavLink to='/utility/install-cpp' className={isActive === '/install-cpp' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/install-cpp')}>
-                    <div>
-                        <br />
-                        Visual c++
-                        <br />
-                        <br />
-                    </div>
-                </NavLink>                
-                <hr />
-                <NavLink to='/utility/dis-license' className={isActive === '/dis-license' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/dis-license')}>
-                    <div>
-                        <br />
-                        DIS License
-                        <br />
-                        <br />
-                    </div>
-                </NavLink>                
-                <hr />
-                <NavLink to='/utility/open-sample' className={isActive === '/open-sample' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/open-sample')}>
-                    <div>
-                        <br />
-                        Sample Acq
-                        <br />
-                        <br />
-                    </div>
-                </NavLink>                
-                <hr />
+                
+
+
+
+
             </div>
             <div className={style.menuDx}>
                 <Routes>

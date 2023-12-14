@@ -4,7 +4,6 @@ import { isPermissionGranted, requestPermission, sendNotification } from '@tauri
 
 export const useUtilityFunctions = () => {
     const [showLoading, setShowLoading] = useState(false);
-    const [computerIP, setComputerIP] = useState<string>('');
 
     const closeLoadingOverlay = () => {
         setShowLoading(true);
@@ -18,97 +17,11 @@ export const useUtilityFunctions = () => {
         await invoke('open_folder', { path });
     };
 
-    const openFirewall = async () => {
-        closeLoadingOverlay();
-        let notification: Array<string> = await invoke('open_firewall');
-        let permissionGranted = await isPermissionGranted();
-if (!permissionGranted) {
-  const permission = await requestPermission();
-  permissionGranted = permission === 'granted';
-}
-if (permissionGranted) {sendNotification({
-            title: notification[0],
-            body: notification[1]
-        });
-    }
-    };
-
-    const showIP = async () => {
-        closeLoadingOverlay();
-        let thisIP: string = await invoke('get_ip');
-        setComputerIP(thisIP);
-    };
 
     const resetActivation = async () => {
 
         closeLoadingOverlay();
         let notification: Array<string> = await invoke('reset_activation_client');
-        let permissionGranted = await isPermissionGranted();
-if (!permissionGranted) {
-  const permission = await requestPermission();
-  permissionGranted = permission === 'granted';
-}
-if (permissionGranted) {sendNotification({
-            title: notification[0],
-            body: notification[1]
-        });
-    }
-        
-    };
-
-    const nbusData = async () => {
-
-        closeLoadingOverlay();
-        let notification: Array<string> = await invoke('delete_nbus_data');
-        let permissionGranted = await isPermissionGranted();
-if (!permissionGranted) {
-  const permission = await requestPermission();
-  permissionGranted = permission === 'granted';
-}
-if (permissionGranted) {sendNotification({
-            title: notification[0],
-            body: notification[1]
-        });
-    }
-        
-    };
-
-    const cleanInstallation = async () => {
-
-        closeLoadingOverlay();
-        let notification: Array<string> = await invoke('clean_installation');
-        let permissionGranted = await isPermissionGranted();
-        if (!permissionGranted) {
-        const permission = await requestPermission();
-        permissionGranted = permission === 'granted';
-        }
-        if (permissionGranted) {
-            sendNotification({
-                    title: notification[0],
-                    body: notification[1]
-                });
-            }
-        
-    };
-
-
-    const openSampleAcq = async (path: String) => {
-        closeLoadingOverlay();
-        await invoke('open_exe', { path });
-    };
-
-    const installCpp = async () => {
-        closeLoadingOverlay();
-        await invoke('install_cpp');
-    };
-
-    const disLicense = async () => {
-        closeLoadingOverlay();
-        await invoke('dis_license');
-    };
-    const fullPermissionDb = async (dbPath: string) => {
-        closeLoadingOverlay();
-        let notification: Array<string> = await invoke('full_permission_db', { dbPath });
         let permissionGranted = await isPermissionGranted();
         if (!permissionGranted) {
         const permission = await requestPermission();
@@ -117,46 +30,71 @@ if (permissionGranted) {sendNotification({
         if (permissionGranted) {sendNotification({
                     title: notification[0],
                     body: notification[1]
-        });
-    }
+                });
+            }
+        
     };
 
-    const disableStartup = async () => {
+    const nbusData = async () => {
+
         closeLoadingOverlay();
-        let notification: Array<string> =  await invoke('disable_startup');
+        let notification: Array<string> = await invoke('delete_nbus_data');
         let permissionGranted = await isPermissionGranted();
-if (!permissionGranted) {
-  const permission = await requestPermission();
-  permissionGranted = permission === 'granted';
-}
-if (permissionGranted) {sendNotification({
-            title: notification[0],
-            body: notification[1]
-        });
+        if (!permissionGranted) {
+        const permission = await requestPermission();
+        permissionGranted = permission === 'granted';
+        }
+        if (permissionGranted) {sendNotification({
+                    title: notification[0],
+                    body: notification[1]
+                });
     }
+        
     };
 
-    const openExceptions = async () => {
+    const resetCSDMLite = async () => {
+        
         closeLoadingOverlay();
-        let path: string = ".\\resources\\files\\exceptions_folder.pdf";
+        let notification: Array<string> = await invoke('reset_csdmlite');
+        let permissionGranted = await isPermissionGranted();
+        if (!permissionGranted) {
+        const permission = await requestPermission();
+        permissionGranted = permission === 'granted';
+        }
+        if (permissionGranted) {sendNotification({
+                    title: notification[0],
+                    body: notification[1]
+                });
+    }
+        
+    };
+
+
+    const openTool = async (path: string) => {
+        closeLoadingOverlay();
+        await invoke('open_tool', { path });
+    };
+
+    const openBoardsave = async () => {
+        closeLoadingOverlay();
+        await invoke('open_boardsave');
+    };
+
+    const openTN = async (name: string) => {
+        closeLoadingOverlay();
+        let path: string = `.\\resources\\technews\\${name}.pdf`;
         await invoke("open_file", {path});
     };
 
     return {
         closeLoadingOverlay,
-        showLoading,
-        computerIP,
         openTW,
-        openFirewall,
-        showIP,
         resetActivation,
         nbusData,
-        openSampleAcq,
-        installCpp,
-        disLicense,
-        fullPermissionDb,
-        disableStartup,
-        openExceptions,
-        cleanInstallation
+        openTool,
+        openBoardsave,
+        openTN,
+        resetCSDMLite,
+        showLoading
     };
 }

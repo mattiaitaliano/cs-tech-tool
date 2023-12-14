@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 import csimaging from '../static/img/products/csimaging.png';
 import activation from '../static/img/products/activation.png';
-import windows from '../static/img/products/windows.png';
 
 
 const Products = ():React.JSX.Element => {
@@ -25,9 +24,11 @@ const Products = ():React.JSX.Element => {
                     <br />
                     - Delete nbus.data
                     <br />
-                    - DB full permission
+                    - DB Analyser
                     <br />
-                    - Clean Installation
+                    - CSDMLite Reset
+                    <br />
+                    - SQL Table Remover
                 </div>
                 </div>
             </div>
@@ -45,25 +46,6 @@ const Products = ():React.JSX.Element => {
                     <br />
                     <br />
                     - Reset Client
-                </div>
-                </div>
-            </div>
-            </NavLink>
-
-            <NavLink to='/windows/' className={style.linkToView}>
-            <div className={style.toolCardItem}>
-                <div className={style.cardTitle}>Windows</div>
-                <div className={style.cardContent}>
-                    <img src={windows} />
-                <div className={style.cardContentOverlay}>
-                    <br />
-                    <br />
-                    Tools:
-                    <br />
-                    <br />
-                    - Show IP
-                    <br />
-                    - Fast Start up
                 </div>
                 </div>
             </div>
