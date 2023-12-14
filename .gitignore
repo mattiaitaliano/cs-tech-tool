@@ -20,7 +20,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# resources (technews and exe)
+# # resources (technews and exe)
 
-/src-tauri/resources
-
+# /src-tauri/resources
