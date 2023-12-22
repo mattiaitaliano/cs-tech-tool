@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { app, window as tauriWindow } from '@tauri-apps/api';
 
 
@@ -18,8 +18,20 @@ import Info from './components/Info';
 import Login from './utilities/Login';
 import CSImaging from './components/CSImaging';
 import Activation from './components/Activation';
+import Switch from './utilities/Switch';
 
 const App = (): React.JSX.Element => {
+
+  
+
+  const location = useLocation();
+
+  
+  const [isChecked, setIsChecked] = useState(false);
+
+    const handleToggle = () => {
+        setIsChecked(!isChecked);
+    };
   
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
@@ -38,7 +50,7 @@ const App = (): React.JSX.Element => {
     { path: "/", element: <Home /> },
     { path: "/products", element: <Products /> },
     { path: "/utility/*", element: <Utility /> },
-    { path: "/links", element: <Links /> },
+    { path: "/links", element: <Links isChecked={isChecked}/> },
     { path: "*", element: <NotFound /> },
     { path: "/csimaging/*", element: <CSImaging />},
     { path: "/activation/*", element: <Activation />}
@@ -73,6 +85,11 @@ const App = (): React.JSX.Element => {
       </>
         ) : (
         <Login onLoginSuccess={handleLoginSuccess} />
+      )}
+      {location.pathname === '/links' && (
+        <div className="toggleSwitch">
+          <Switch isChecked={isChecked} handleToggle={handleToggle} />
+        </div>
       )}
       </>
   );

@@ -21,20 +21,21 @@ import iconZoho from '../static/img/links/icons/zoho.png';
 import iconToolhub from '../static/img/links/icons/toolhub.png';
 import iconEasyvista from '../static/img/links/icons/easyvista.png';
 
+interface LinksProps {
+    isChecked: boolean;
+}
 
-const Links = ():React.JSX.Element => {
-
-    const [isIconActive, setIsIconActive] = useState(false);
+const Links = ({ isChecked }: LinksProps ):React.JSX.Element => {
 
     const imagesMap: ImagesMapType = {
-        infotec: isIconActive ? iconInfotec : infotec,
-        eparts: isIconActive ? iconEparts : eparts,
-        activation: isIconActive ? iconActivation : activation,
-        status: isIconActive ? iconStatus : status,
-        activationForm: isIconActive ? iconActivationForm : activationForm,
-        zoho: isIconActive ? iconZoho : zoho,
-        toolhub: isIconActive ? iconToolhub : toolhub,
-        easyvista: isIconActive ? iconEasyvista : easyvista,
+        infotec: isChecked ? iconInfotec : infotec,
+        eparts: isChecked ? iconEparts : eparts,
+        activation: isChecked ? iconActivation : activation,
+        status: isChecked ? iconStatus : status,
+        activationForm: isChecked ? iconActivationForm : activationForm,
+        zoho: isChecked ? iconZoho : zoho,
+        toolhub: isChecked ? iconToolhub : toolhub,
+        easyvista: isChecked ? iconEasyvista : easyvista,
     };
 
     const renderImage = (imageName: string) => (
@@ -193,15 +194,7 @@ const Links = ():React.JSX.Element => {
             </div>
             </a>
 
-            <div className={`toggleButton ${isIconActive ? 'active' : ''}`} onClick={() => setIsIconActive(!isIconActive)}>
-            <span className="toggleText">{isIconActive ? 'Previews' : 'Icons'}</span>
-            </div>
-
-        </div>
-
-        <div className="toggleContainer">Ciao</div>
-
-        
+        </div>     
 
         
     </>

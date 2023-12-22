@@ -7,7 +7,7 @@ const Boardsave = (): React.JSX.Element => {
 
     const {
         showLoading,
-        openBoardsave,
+        openTool,
     } = useUtilityFunctions();
 
     return (
@@ -29,7 +29,7 @@ const Boardsave = (): React.JSX.Element => {
                 <br />
                 <br />
                 <div className={style.buttonContainer}>
-            <button onClick={() => openBoardsave()}>
+            <button onClick={() => openTool('boardsavefinder')}>
                 Open Tool
             </button>
             </div>

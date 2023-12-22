@@ -2,17 +2,17 @@ import React from "react";
 import style from "../static/components.module.scss";
 import Carousel from "../utilities/Carousel";
 
-import firewalltool from '../static/img/slideshow/firewalltool.png';
-import bugfullpermission from '../static/img/slideshow/bugfullpermission.png';
-import resetactivation from '../static/img/slideshow/resetactivationtool.png';
+import securitytool from '../static/img/slideshow/securitytool.png';
+import csdmlitereset from '../static/img/slideshow/csdmlitereset.png';
+import dbanalyser from '../static/img/slideshow/dbanalyser.png';
 import newversion from '../static/img/slideshow/newversion.png';
 
 const Home = (): React.JSX.Element => {
     const images = [
         newversion,
-        firewalltool,
-        bugfullpermission,
-        resetactivation
+        securitytool,
+        csdmlitereset,
+        dbanalyser
         
     ]
 

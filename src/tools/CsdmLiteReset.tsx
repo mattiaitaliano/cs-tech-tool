@@ -3,12 +3,11 @@ import LoadingOverlay from '../utilities/LoadingOverlay';
 import { useUtilityFunctions } from '../tool_functions/utilityFunctions';
 import style from '../static/toolsLayout.module.scss';
 
-const CsdmLiteReset = (): React.JSX.Element => {
+const CSDMLiteReset = (): React.JSX.Element => {
 
     const {
-        closeLoadingOverlay,
         showLoading,
-        resetCSDMLite,
+        openTool,
         openTN
     } = useUtilityFunctions();
 
@@ -34,7 +33,7 @@ const CsdmLiteReset = (): React.JSX.Element => {
                 <br />
                 <br />
                 <div className={style.buttonContainer}>
-            <button onClick={() => resetCSDMLite()}>
+            <button onClick={() => openTool('resetcsdmlite')}>
                 Reset
             </button>
             </div>
@@ -43,4 +42,4 @@ const CsdmLiteReset = (): React.JSX.Element => {
     );
 };
 
-export default CsdmLiteReset;
+export default CSDMLiteReset;

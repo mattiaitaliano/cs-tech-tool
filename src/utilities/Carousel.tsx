@@ -51,9 +51,9 @@ const Carousel: React.FC<CarouselProps> = ({ images }): React.JSX.Element => {
                 <br />
                 <br />
             <div className={style.gridContainer}>
-                <NavLink to='/csimaging/reset-csdmlite' className={style.gridItem}>Reset CSDMLite</NavLink>
-                <NavLink to='/csimaging/full-permission' className={style.gridItem}>CS Security</NavLink>
-                <NavLink to='/utility/reset-activation' className={style.gridItem}>Reset Activation</NavLink>
+                <NavLink to='/csimaging/csdml-reset' className={style.gridItem}>Reset CSDMLite</NavLink>
+                <NavLink to='/utility/security-tool' className={style.gridItem}>CS Security</NavLink>
+                <NavLink to='/csimaging/db-analyser' className={style.gridItem}>DB Analyser</NavLink>
                 <NavLink to='/csimaging/nbus-data' className={style.gridItem}>Nbus.data</NavLink>
             </div>
             </div>
