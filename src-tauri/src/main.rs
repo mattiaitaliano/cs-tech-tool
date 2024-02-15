@@ -18,7 +18,12 @@ fn main() {
         csi8::nbus_data::delete_nbus_data,
         csi8::csdmlite::reset_csdmlite, 
         open_tool::open_tool, 
-        open_tool::open_boardsave])
+        open_tool::open_boardsave,
+        utility::cssecurity::cssecurity_defender_rules, 
+        utility::cssecurity::cssecurity_firewall_rules, 
+        utility::cssecurity::cssecurity_security_rules,
+        utility::systeminfo::specifics_checking
+        ])         
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }

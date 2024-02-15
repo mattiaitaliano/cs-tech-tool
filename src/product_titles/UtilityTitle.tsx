@@ -13,8 +13,8 @@ const UtilityTitle = (): React.JSX.Element => {
                 <br />
                 <br />
                     <h3>
-                        Select a tool from the <strong>left menu</strong>
-                    </h3>.
+                        Select a tool from the <strong>left menu</strong>.
+                    </h3>
                 </div>
         </>
     );

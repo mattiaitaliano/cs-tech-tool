@@ -1,0 +1,10 @@
+New-NetFirewallRule -DisplayName "CSI 10001-10100 In" -Direction Inbound -LocalPort 10001-10100 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "CSI 10001-10100 Out" -Direction Outbound -LocalPort 10001-10100 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "CSI 52540 In" -Direction Inbound -LocalPort 52540 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "CSI 52540 Out" -Direction Outbound -LocalPort 52540 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "CSI 52541 In" -Direction Inbound -LocalPort 52541 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "CSI 52541 Out" -Direction Outbound -LocalPort 52541 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "CSI 9999 In" -Direction Inbound -LocalPort 9999 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "CSI 9999 Out" -Direction Outbound -LocalPort 9999 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "CSI 50000 In" -Direction Inbound -LocalPort 50000 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "CSI 50000 Out" -Direction Outbound -LocalPort 50000 -Protocol TCP -Action Allow

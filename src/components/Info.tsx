@@ -16,9 +16,9 @@ const Info = (): React.JSX.Element => {
                     <img src={logo} width="20px" height="20px" /> CS Technician Tool
                 <br />
                 <br />
-                <p><strong>Version</strong>: <span>1.0.0 (beta)</span>
+                <p><strong>Version</strong>: <span>1.1.0 (beta)</span>
                     <br/>
-                    <strong>Last update:</strong> <span>22th December 2023</span>
+                    <strong>Last update:</strong> <span>23th January 2024</span>
                 
                 </p>
                 </div>

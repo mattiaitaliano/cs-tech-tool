@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { app, window as tauriWindow } from '@tauri-apps/api';
 
 
 import './App.scss';

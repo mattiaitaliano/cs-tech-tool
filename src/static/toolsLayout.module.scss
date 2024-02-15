@@ -53,7 +53,7 @@
 
     .menuDx {
         flex-basis: 77%;
-        padding: 3%;
+        padding: 0% 3%;
         
     }
 }
@@ -184,3 +184,64 @@
 
     }
 }
+
+// =================== TOOLS FORM ==============
+
+
+.twoColumnsForm {
+    display: flex;
+    text-align: center;
+}
+
+.formColumn {
+    flex: 1;
+}
+
+// =================== SYSTEM INFO ==============
+
+.systemInfoTable {
+    display: table;
+    width: 100%; //
+    border-collapse: collapse;
+    font-size: .95rem;
+  
+    .systemInfoRow {
+      display: table-row;
+      
+      
+      &:nth-child(odd) {
+        background-color: #f9f9f9;
+      }
+    }
+  
+    .systemInfoCell {
+      display: table-cell;
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: left;
+  
+      
+      &:first-child {
+        width: 10%; 
+      }
+  
+      
+      &:not(:first-child) {
+        width: 45%; 
+      }
+    }
+  
+    .header {
+      font-weight: bold;
+      background-color: #f2f2f2;
+    }
+  }
+  
+  
+  .meetRequirement {
+    background-color: rgb(3, 156, 3);
+  }
+
+  .noMeetRequirement {
+    background-color: rgb(155, 1, 1);
+  }

@@ -7,6 +7,7 @@ import UtilityTitle from "../product_titles/UtilityTitle";
 
 import SecurityTool from "../tools/SecurityTool";
 import Boardsave from "../tools/Boardsave";
+import SystemInfoComponent from "../tools/SystemInfo";
 
 
 import { faServer } from "@fortawesome/free-solid-svg-icons";
@@ -22,7 +23,8 @@ const Utility = (): React.JSX.Element => {
     const views = [
         { path: "/", element: <UtilityTitle /> },
         { path: "/security-tool", element: <SecurityTool /> },
-        { path: "/boardsave-finder", element: <Boardsave /> }
+        { path: "/boardsave-finder", element: <Boardsave /> },
+        { path: "/specifics-checking", element: <SystemInfoComponent /> }
     ];
 
     return (
@@ -56,7 +58,16 @@ const Utility = (): React.JSX.Element => {
                         <br />
                         <br />
                     </div>
-                </NavLink>                
+                </NavLink>  
+                <hr />
+                <NavLink to='/utility/specifics-checking' className={isActive === '/specifics-checking' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/specifics-checking')}>
+                    <div>
+                        <br />
+                        System Compatibility
+                        <br />
+                        <br />
+                    </div>
+                </NavLink>   
                 <hr />
                 
 

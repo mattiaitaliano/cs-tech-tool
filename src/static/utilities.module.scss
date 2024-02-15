@@ -144,7 +144,7 @@
     align-items: center;
     color: white;
     font-size: 14px;
-    z-index: 999;
+    z-index: 99999;
 
     svg{
         width: 100px;
@@ -153,3 +153,61 @@
       }
 
   }
+
+  // ================================ CONFIRMATION OVERLAY ==============================
+
+  .confirmationOverlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+    top: 9.15rem;
+    left: 13.85rem;
+
+  }
+.confirmationOverlayContainer {
+    position: fixed;
+    left: 61%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    background-color: rgb(225, 225, 225);
+    border-radius: 50px;
+    border: 3px solid rgb(45, 45, 45);
+    color: black;
+    z-index: 999;
+    font-size: 1rem;
+    padding: 50px;
+    text-align: center;
+  }
+
+.buttonsLayout {
+    display: flex;
+    justify-content: space-between;
+
+    .primaryButton {
+        flex: 1;
+        margin-right: 10px;
+        background-color: rgb(248, 164, 8);
+        padding: 16px;
+        border-radius: 8px;
+        border: 3px solid rgb(45, 45, 45);
+        text-align: center;
+        color: rgb(45, 45, 45);
+        cursor: pointer;
+        font-size: .9rem;
+        transition: .2s ease-in-out;
+        text-decoration: none;
+
+        &:last-child{
+            margin-right: 0;
+        }
+        &:hover {
+            background-color: rgb(45, 45, 45);
+            color: white;
+            transition: .2s ease-in-out;
+        }
+    }
+}

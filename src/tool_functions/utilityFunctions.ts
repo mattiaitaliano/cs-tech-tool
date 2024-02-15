@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { invoke } from '@tauri-apps/api/tauri';
 import { isPermissionGranted, requestPermission, sendNotification } from '@tauri-apps/api/notification';
+import { SystemInfo } from '../tools/SystemInfo';
 
 export const useUtilityFunctions = () => {
     const [showLoading, setShowLoading] = useState(false);
@@ -86,6 +87,75 @@ export const useUtilityFunctions = () => {
         await invoke("open_file", {path});
     };
 
+    const openPDF = async (name: string) => {
+        closeLoadingOverlay();
+        let path: string = `.\\resources\\files\\${name}.pdf`;
+        await invoke("open_file", {path});
+    };
+
+    const CSSecurityTool = async (action: string, product:string, operation:string) => {
+        closeLoadingOverlay();
+            
+        let firewall: string;
+        switch (product) {
+            case "CSImaging7":
+                firewall = "CSI";
+                break;
+            case "CSImaging8_v2":
+                firewall = "CSI";
+                break;
+            case "CSImaging8_v3":
+                firewall = "CSI";
+                break;
+            case "CS8100":
+                firewall = "CS8100";
+                break;
+            case "CS8100SC":
+                firewall = "CS8100";
+                break;
+            case "CS81003D":
+                firewall = "CS8100";
+                break;
+            case "CS8100SC3D":
+                firewall = "CS8100";
+                break;
+            case "CS8200v1":
+                firewall = "CS8200";
+                break;
+            case "CS8200v2":
+                firewall = "CS8200";
+                break;
+            case "CS9600":
+                firewall = "CS9600";
+                break;
+            default:
+                firewall = "CSI"
+        }
+        
+        switch (operation) {
+            case "Defender":
+                await invoke("cssecurity_defender_rules", {product, action});
+                break;
+            case "Firewall":
+                await invoke("cssecurity_firewall_rules", {firewall, action});
+                break;
+            case "Security":
+                await invoke("cssecurity_security_rules", {});
+                break;
+            case "All":
+                await invoke("cssecurity_defender_rules", {product, action});
+                await invoke("cssecurity_firewall_rules", {firewall, action});
+                await invoke("cssecurity_security_rules");
+        }
+
+    }
+
+
+    const specificsChecking = async function () {
+        const values: SystemInfo = await invoke("specifics_checking");
+        return values;
+    }
+
     return {
         closeLoadingOverlay,
         openTW,
@@ -94,7 +164,15 @@ export const useUtilityFunctions = () => {
         openTool,
         openBoardsave,
         openTN,
+        openPDF,
         resetCSDMLite,
-        showLoading
+        showLoading,
+        CSSecurityTool,
+        specificsChecking
     };
 }
+
+
+//////////////////////////////////////
+
+
