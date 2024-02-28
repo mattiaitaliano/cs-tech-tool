@@ -13,7 +13,7 @@ const NbusData = (): React.JSX.Element => {
     } = useUtilityFunctions();
 
     const openFolder = async (path: String) => {
-        closeLoadingOverlay();
+        closeLoadingOverlay(2000);
         await invoke('open_folder', { path });
     };
 

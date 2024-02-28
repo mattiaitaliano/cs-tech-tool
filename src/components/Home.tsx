@@ -5,7 +5,7 @@ import Carousel from "../utilities/Carousel";
 import securitytool from '../static/img/slideshow/securitytool.png';
 import csdmlitereset from '../static/img/slideshow/csdmlitereset.png';
 import dbanalyser from '../static/img/slideshow/dbanalyser.png';
-import newversion from '../static/img/slideshow/newversion.png';
+import newversion from '../static/img/slideshow/systeminfo.png';
 
 const Home = (): React.JSX.Element => {
     const images = [

@@ -8,7 +8,11 @@ pub struct SystemInfo {
     ram: String,
     hard_disk: String,
     cuda: String,
-    os: String
+    os: String,
+    core: String,
+    threads: String,
+    clock: String,
+    gpu_ram: String,
 }
 
 fn run_command(cmd: &str) -> Result<String, String> {
@@ -36,6 +40,10 @@ pub fn specifics_checking() -> Result<SystemInfo, String> {
     let hard_disk_info = run_command("wmic diskdrive get size")?;
     let cuda_version_info = run_command("nvidia-smi")?;
     let os_info = run_command("wmic os get Caption")?;
+    let core_info = run_command("wmic cpu get NumberOfCores")?;
+    let threads_info = run_command("wmic cpu get NumberOfLogicalProcessors")?;
+    let clock_info = run_command("wmic cpu get MaxClockSpeed")?;
+    let gpu_ram_info = run_command("wmic path win32_videocontroller get AdapterRAM")?;
 
     Ok(SystemInfo {
         cpu: cpu_info,
@@ -43,7 +51,11 @@ pub fn specifics_checking() -> Result<SystemInfo, String> {
         ram: ram_info,
         hard_disk: hard_disk_info,
         cuda: cuda_version_info,
-        os: os_info
+        os: os_info,
+        core: core_info,
+        threads: threads_info,
+        clock: clock_info,
+        gpu_ram: gpu_ram_info,
     })
 
 }

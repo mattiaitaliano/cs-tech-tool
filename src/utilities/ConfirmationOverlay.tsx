@@ -6,13 +6,14 @@ import LoadingOverlay from '../utilities/LoadingOverlay';
 
 interface ConfirmationOverlayProps {
     action: string,
+    csi: string,
     product: string,
     operation: string,
     onClose: () => void,
 };
 
 
-const ConfirmationOverlay: React.FC<ConfirmationOverlayProps> = ({action, product, operation, onClose }) => {
+const ConfirmationOverlay: React.FC<ConfirmationOverlayProps> = ({action, csi, product, operation, onClose }) => {
 
     const [isDone, setIsDone] = useState(false);
     
@@ -22,8 +23,8 @@ const ConfirmationOverlay: React.FC<ConfirmationOverlayProps> = ({action, produc
     } = useUtilityFunctions();
 
     const handleContinueBtn = function () {
-        CSSecurityTool(action, product, operation);
-        setTimeout(() => setIsDone(true), 2000);
+        CSSecurityTool(action.toLowerCase(), csi.toLowerCase(), product.toLowerCase(), operation.toLowerCase());
+        setTimeout(() => setIsDone(true), 7000);
     }
 
     
@@ -51,9 +52,11 @@ const ConfirmationOverlay: React.FC<ConfirmationOverlayProps> = ({action, produc
                 <h2>ATTENTION!</h2>
                 <p>Before to proceed, please check out the selection made:
                     <br/><br/>
-                    <strong>Product</strong>: {product}
+                    <strong>CS Imaging</strong>: {csi.split("_").join(" ")}
                     <br/><br/>
-                    <strong>Operation</strong>: {`${action} ${operation} Rules`}
+                    <strong>Product</strong>: {product.split("_").join(" ")}
+                    <br/><br/>
+                    <strong>Operation</strong>: {`${action} ${operation} rules`}
                 <br/><br/>
                 </p>
                 <div className={style.buttonsLayout}>

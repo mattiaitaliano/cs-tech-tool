@@ -8,19 +8,28 @@ const SecurityTool = (): React.JSX.Element => {
     const [showConfirmationMessage, setShowConfirmationMessage] = useState<boolean>(false);
     const [action, setAction] = useState("null");
 
+    const [ csi, setCsi ] = useState<string>("no_selection");
     const [ product, setProduct ] = useState<string>("no_selection");
     const [ operation, setOperation] = useState<string>("no_selection");
 
     const [showButtons, setShowButtons] = useState(false);
+    const [isSomethingSelected, setIsSomethingSelected] = useState(false);
+
+    const handleCSIChange = function(e: React.ChangeEvent<HTMLSelectElement>) {
+        setCsi(e.target.value);
+        if (e.target.value !== "no_selection" && product !== "no_selection" && operation !== "no_selection") {setShowButtons(true);} else {setShowButtons(false)}
+        if (e.target.value !== "No_Imaging" || product !== "No_Unit") { setIsSomethingSelected(true)} else {setIsSomethingSelected(false)}
+    };
 
     const handleProductChange = function(e: React.ChangeEvent<HTMLSelectElement>) {
         setProduct(e.target.value);
-        if (e.target.value !== "no_selection" && operation !== "no_selection") {setShowButtons(true);} else {setShowButtons(false)}
+        if (e.target.value !== "no_selection" && csi !== "no_selection" && operation !== "no_selection") {setShowButtons(true);} else {setShowButtons(false)}
+        if (csi !== "No_Imaging" || e.target.value !== "No_Unit") { setIsSomethingSelected(true)} else {setIsSomethingSelected(false)}
     };
 
     const handleOperationChange = function(e: React.ChangeEvent<HTMLSelectElement>) {
         setOperation(e.target.value);
-        if (e.target.value !== "no_selection" && product !== "no_selection") {setShowButtons(true);} else {setShowButtons(false)}
+        if (e.target.value !== "no_selection" && csi !== "no_selection" && product !== "no_selection") {setShowButtons(true);} else {setShowButtons(false)}
         
     };
 
@@ -30,7 +39,7 @@ const SecurityTool = (): React.JSX.Element => {
 
     return (
         <>
-            {showConfirmationMessage && <ConfirmationOverlay action={action} product={product} operation={operation} onClose={() => setShowConfirmationMessage(false)} /> }
+            {showConfirmationMessage && <ConfirmationOverlay action={action} csi={csi} product={product} operation={operation} onClose={() => setShowConfirmationMessage(false)} /> }
             <div className={style.toolPage}>
                 <h1>CS Security Tool</h1>
                 <h2>
@@ -45,23 +54,36 @@ const SecurityTool = (): React.JSX.Element => {
                     <form className={style.twoColumnsForm}>
                         <div className={style.formColumn} >
                         <label>
+                            CS Imaging:
+                        </label>
+                    <br/>
+                        <br/>
+                        <select name="csi" id="csi" onChange={handleCSIChange}> 
+                        <option value="no_selection">---</option>
+                        <option value="No_Imaging">N/A</option> 
+                        <option value="CSI7">CS Imaging 7</option> 
+                        <option value="CSI8">CS Imaging 8</option> 
+                        <option value="CSI8_Server">CS Imaging 8 S/C</option> 
+                    </select>
+                        </div>
+
+                        <div className={style.formColumn} >
+                        <label>
                             Product:
                         </label>
                     <br/>
                         <br/>
                         <select name="products" id="products" onChange={handleProductChange}> 
                         <option value="no_selection">---</option>
-        <option value="CSImaging7">CSImaging 7</option> 
-        <option value="CSImaging8_v2">CSImaging 8 v2</option> 
-        <option value="CSImaging8_v3">CSImaging 8 v3</option> 
-        <option value="CS8100">CS8100</option> 
-        <option value="CS8100SC">CS8100 SC</option>
-        <option value="CS81003D">CS8100 3D</option>
-        <option value="CS8100SC3D">CS8100 3D SC</option>
-        <option value="CS8200v1">CS8200</option>
-        <option value="CS8200v2">CS8200 NEO</option>
-        <option value="CS9600">CS9600 (proxy)</option>
-    </select>
+                        <option value="No_Unit">N/A</option> 
+                        <option value="CS8100">CS8100</option> 
+                        <option value="CS8100_SC">CS8100 SC</option>
+                        <option value="CS8100_3D">CS8100 3D</option>
+                        <option value="CS8100_SC_3D">CS8100 3D SC</option>
+                        <option value="CS8200">CS8200</option>
+                        <option value="CS8200_NEO">CS8200 NEO</option>
+                        <option value="CS9600_PROXY">CS9600 (proxy)</option>
+                    </select>
                         </div>
 
                         <div className={style.formColumn} >
@@ -72,11 +94,11 @@ const SecurityTool = (): React.JSX.Element => {
                         <br/>
                         <select name="operations" id="operations" onChange={handleOperationChange}>
                         <option value="no_selection">---</option>
-        <option value="Defender">Windows Defender</option> 
-        <option value="Firewall">Windows Firewall</option> 
-        <option value="Security">Windows Security</option> 
-        <option value="All">Apply all</option> 
-    </select>
+                            <option value="defender">Windows Defender</option> 
+                            <option value="firewall">Windows Firewall</option> 
+                            <option value="security">Windows Security</option> 
+                            <option value="all">Apply all</option> 
+                        </select>
                         </div>
 
                     </form>
@@ -85,21 +107,29 @@ const SecurityTool = (): React.JSX.Element => {
                     <br/><br/>
                     <br/>
                     
-                {showButtons && <div className={style.buttonContainer}>
+            
+                {showButtons && isSomethingSelected && <div className={style.buttonContainer}>
             <button onClick={() => {
                 setAction("Add");
                 setShowConfirmationMessage(true);
             }
-            }>
+            }
+            >
                 Add Rules
-            </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+            { operation !== "security" && operation !== "all" &&
+            <>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button onClick={() => {
                 setAction("Remove");
                 setShowConfirmationMessage(true);
             }
-            }>
+            }
+            >
                 Remove Rules
             </button>
+            </>
+}
             </div>}
             </div>
             </>

@@ -63,7 +63,7 @@ const Utility = (): React.JSX.Element => {
                 <NavLink to='/utility/specifics-checking' className={isActive === '/specifics-checking' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/specifics-checking')}>
                     <div>
                         <br />
-                        System Compatibility
+                        System Check
                         <br />
                         <br />
                     </div>
