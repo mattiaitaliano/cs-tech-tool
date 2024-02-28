@@ -7,7 +7,7 @@ const CREATE_NO_WINDOW: u32 = 0x08000000;
 ////////////////////////////////////////////////////
 
 
-pub fn csi7_defender(action: String) {
+pub async fn csi7_defender(action: String) {
     let paths = vec![
         "C:\\Program Files\\Carestream\\CS3DSuite-light-uninst.exe", 
         "C:\\Program Files\\Carestream\\3D Visualization Application\\3DImagingSoftware.exe", 

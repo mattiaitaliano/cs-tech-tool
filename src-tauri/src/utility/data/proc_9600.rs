@@ -7,7 +7,7 @@ const CREATE_NO_WINDOW: u32 = 0x08000000;
 ////////////////////////////////////////////////////
 
 
-pub fn cs9600_defender(action: String) {
+pub async fn cs9600_defender(action: String) {
     let paths = vec![
         "C:\\Program Files\\Common Files\\Trophy\\Acquisition\\acquisition.exe", 
         "C:\\Program Files\\Common Files\\Trophy\\Acquisition\\AcquisitionSampleAdvanced.exe", 

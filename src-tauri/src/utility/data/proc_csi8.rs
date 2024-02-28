@@ -7,7 +7,7 @@ const CREATE_NO_WINDOW: u32 = 0x08000000;
 ////////////////////////////////////////////////////
 
 
-pub fn csi8_defender(action: String) {
+pub async fn csi8_defender(action: String) {
     let paths = vec![
         "C:\\Program Files (x86)\\Carestream\\CSI Suite uninst.exe", 
         "C:\\Program Files (x86)\\Carestream\\CSDML\\AcqTwain.exe", 

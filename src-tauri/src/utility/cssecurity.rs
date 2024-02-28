@@ -15,7 +15,7 @@ use crate::utility::data;
 ///////////////////////////////////////////////////////////////////
 
 #[tauri::command]
-pub fn cssecurity_defender_rules(csi: String, product: String, action: String) {
+pub async fn cssecurity_defender_rules(csi: String, product: String, action: String) {
     if csi.to_lowercase() != "no_imaging" {
         match csi.as_str() {
             "csi7" => data::proc_csi7::csi7_defender(action.clone()),
