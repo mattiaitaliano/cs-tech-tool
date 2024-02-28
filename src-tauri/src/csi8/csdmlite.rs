@@ -1,4 +1,7 @@
 use std::process::Command;
+use std::os::windows::process::CommandExt;
+
+const CREATE_NO_WINDOW: u32 = 0x08000000;
 
 #[tauri::command]
 pub fn reset_csdmlite() -> [String; 2] {
@@ -6,6 +9,7 @@ pub fn reset_csdmlite() -> [String; 2] {
 
     let output = Command::new("powershell")
         .arg(script_path)
+        .creation_flags(CREATE_NO_WINDOW)
         .output();
 
     match output {

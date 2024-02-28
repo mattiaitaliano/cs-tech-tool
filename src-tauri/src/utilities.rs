@@ -1,9 +1,14 @@
 use std::process::Command;
 
+use std::os::windows::process::CommandExt;
+
+const CREATE_NO_WINDOW: u32 = 0x08000000;
+
 #[tauri::command]
 pub fn open_folder(path: String) {
     match Command::new("explorer")
         .arg(&format!(r#"{}""#,path))
+        .creation_flags(CREATE_NO_WINDOW)
         .status() {
         Ok(status) => {
             if !status.success() {
@@ -21,6 +26,7 @@ pub fn open_file(path: &str) -> [String; 2]{
 
     match Command::new("cmd")
         .args(&[&format!("/c start {}", path)])
+        .creation_flags(CREATE_NO_WINDOW)
         .status() {
             Ok(status) => {
                 if !status.success() {
@@ -53,6 +59,7 @@ pub fn copy_file(path: &str) -> [String; 2]{
                 ps_script
             ),
         ])
+        .creation_flags(CREATE_NO_WINDOW)
         .status() {
             Ok(status) => {
                 if !status.success() {
@@ -79,6 +86,7 @@ pub fn open_exe(path: String) -> [String; 2] {
                 path
             ),
         ])
+        .creation_flags(CREATE_NO_WINDOW)
         .status()
     {
         Ok(status) => {

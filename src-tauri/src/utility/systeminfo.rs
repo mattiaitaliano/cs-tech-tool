@@ -1,4 +1,8 @@
 use std::process::Command;
+use std::os::windows::process::CommandExt;
+
+const CREATE_NO_WINDOW: u32 = 0x08000000;
+
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize)]
@@ -18,6 +22,7 @@ pub struct SystemInfo {
 fn run_command(cmd: &str) -> Result<String, String> {
     let output = Command::new("cmd")
                         .args(&["/C", cmd])
+                        .creation_flags(CREATE_NO_WINDOW)
                         .output();
 
     match output {

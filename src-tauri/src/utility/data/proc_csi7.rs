@@ -1,5 +1,7 @@
 use std::process::Command;
+use std::os::windows::process::CommandExt;
 
+const CREATE_NO_WINDOW: u32 = 0x08000000;
 ////////////////////////////////////////////////////
 /////////////////////// CSI7 ///////////////////////
 ////////////////////////////////////////////////////
@@ -94,6 +96,7 @@ pub fn csi7_defender(action: String) {
         };
         Command::new("powershell")
             .args(&["-Command", &command])
+            .creation_flags(CREATE_NO_WINDOW)
             .output()
             .expect("failed to execute process");
 

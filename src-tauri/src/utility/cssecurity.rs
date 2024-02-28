@@ -1,4 +1,7 @@
 use std::process::Command;
+use std::os::windows::process::CommandExt;
+
+const CREATE_NO_WINDOW: u32 = 0x08000000;
 
 use crate::utility::data;
 
@@ -98,6 +101,7 @@ pub fn cssecurity_security_rules() -> String {
             .arg(dir)
             .arg("/grant")
             .arg(format!("Everyone:{}", perm))
+            .creation_flags(CREATE_NO_WINDOW)
             .output()
             {
                 Ok(output) => {
@@ -161,11 +165,12 @@ fn csi_firewall(action: String) -> [String; 2]{
 
     let combined_commands = commands.join("; ");
         
-    match std::process::Command::new("powershell")
+    match Command::new("powershell")
         .args(&[
             "-Command",
             &combined_commands,
         ])
+        .creation_flags(CREATE_NO_WINDOW)
         .status() {
             Ok(status) => {
                 if !status.success() {
@@ -241,11 +246,12 @@ fn csi_server_firewall(action: String) -> [String; 2]{
 
     let combined_commands = commands.join("; ");
         
-    match std::process::Command::new("powershell")
+    match Command::new("powershell")
         .args(&[
             "-Command",
             &combined_commands,
         ])
+        .creation_flags(CREATE_NO_WINDOW)
         .status() {
             Ok(status) => {
                 if !status.success() {
@@ -317,11 +323,12 @@ fn cs8100_firewall(action: String) -> [String; 2]{
 
     let combined_commands = commands.join("; ");
         
-    match std::process::Command::new("powershell")
+    match Command::new("powershell")
         .args(&[
             "-Command",
             &combined_commands,
         ])
+        .creation_flags(CREATE_NO_WINDOW)
         .status() {
             Ok(status) => {
                 if !status.success() {
@@ -393,11 +400,12 @@ fn cs8200_firewall(action: String) -> [String; 2]{
 
     let combined_commands = commands.join("; ");
         
-    match std::process::Command::new("powershell")
+    match Command::new("powershell")
         .args(&[
             "-Command",
             &combined_commands,
         ])
+        .creation_flags(CREATE_NO_WINDOW)
         .status() {
             Ok(status) => {
                 if !status.success() {
@@ -449,11 +457,12 @@ fn cs9600_firewall(action: String) -> [String; 2]{
 
     let combined_commands = commands.join("; ");
         
-    match std::process::Command::new("powershell")
+    match Command::new("powershell")
         .args(&[
             "-Command",
             &combined_commands,
         ])
+        .creation_flags(CREATE_NO_WINDOW)
         .status() {
             Ok(status) => {
                 if !status.success() {

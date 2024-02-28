@@ -1,4 +1,7 @@
 use std::process::Command;
+use std::os::windows::process::CommandExt;
+
+const CREATE_NO_WINDOW: u32 = 0x08000000;
 
 #[tauri::command]
 pub fn delete_nbus_data() -> [String; 2] {
@@ -10,6 +13,7 @@ pub fn delete_nbus_data() -> [String; 2] {
             "-Command",
             &format!(r#"Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command {}" -Verb RunAs -WindowStyle Hidden"#, ps_command)
         ])
+        .creation_flags(CREATE_NO_WINDOW)
         .status() {
             Ok(status) => {
                 if !status.success() {

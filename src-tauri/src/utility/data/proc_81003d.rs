@@ -1,5 +1,7 @@
 use std::process::Command;
+use std::os::windows::process::CommandExt;
 
+const CREATE_NO_WINDOW: u32 = 0x08000000;
 ////////////////////////////////////////////////////
 /////////////////////// 81000 3D ///////////////////
 ////////////////////////////////////////////////////
@@ -42,6 +44,7 @@ pub fn cs81003d_defender(action: String) {
         };
         Command::new("powershell")
             .args(&["-Command", &command])
+            .creation_flags(CREATE_NO_WINDOW)
             .output()
             .expect("failed to execute process");
 

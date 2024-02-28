@@ -1,4 +1,7 @@
 use std::process::Command;
+use std::os::windows::process::CommandExt;
+
+const CREATE_NO_WINDOW: u32 = 0x08000000;
 
 #[tauri::command]
 pub fn open_tool(path: String) -> [String; 2]{
@@ -9,6 +12,7 @@ pub fn open_tool(path: String) -> [String; 2]{
     .args(&[
         "-Command", &command_string
     ])
+    .creation_flags(CREATE_NO_WINDOW)
     .status() {
             Ok(status) => {
                 if !status.success() {
@@ -34,6 +38,7 @@ pub fn open_boardsave() -> [String; 2]{
     .args(&[
         "-Command", &command_string
     ])
+    .creation_flags(CREATE_NO_WINDOW)
     .status() {
             Ok(status) => {
                 if !status.success() {

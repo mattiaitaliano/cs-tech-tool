@@ -8,6 +8,7 @@ import UtilityTitle from "../product_titles/UtilityTitle";
 import SecurityTool from "../tools/SecurityTool";
 import Boardsave from "../tools/Boardsave";
 import SystemInfoComponent from "../tools/SystemInfo";
+import LogCleaner from "../tools/LogCleaner";
 
 
 import { faServer } from "@fortawesome/free-solid-svg-icons";
@@ -24,7 +25,8 @@ const Utility = (): React.JSX.Element => {
         { path: "/", element: <UtilityTitle /> },
         { path: "/security-tool", element: <SecurityTool /> },
         { path: "/boardsave-finder", element: <Boardsave /> },
-        { path: "/specifics-checking", element: <SystemInfoComponent /> }
+        { path: "/specifics-checking", element: <SystemInfoComponent /> },
+        { path: "/logs-cleaner", element: <LogCleaner /> },
     ];
 
     return (
@@ -69,7 +71,15 @@ const Utility = (): React.JSX.Element => {
                     </div>
                 </NavLink>   
                 <hr />
-                
+                <NavLink to='/utility/logs-cleaner' className={isActive === '/logs-cleaner' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/logs-cleaner')}>
+                    <div>
+                        <br />
+                        Logs Cleaner
+                        <br />
+                        <br />
+                    </div>
+                </NavLink>
+                <hr />
 
 
 
