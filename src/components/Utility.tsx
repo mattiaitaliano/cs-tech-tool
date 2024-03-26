@@ -12,6 +12,7 @@ import LogCleaner from "../tools/LogCleaner";
 
 
 import { faServer } from "@fortawesome/free-solid-svg-icons";
+import LogSummary from "../tools/LogSummary";
 
 const Utility = (): React.JSX.Element => {
 
@@ -27,6 +28,7 @@ const Utility = (): React.JSX.Element => {
         { path: "/boardsave-finder", element: <Boardsave /> },
         { path: "/specifics-checking", element: <SystemInfoComponent /> },
         { path: "/logs-cleaner", element: <LogCleaner /> },
+        { path: "/logs-summary", element: <LogSummary /> },
     ];
 
     return (
@@ -75,6 +77,15 @@ const Utility = (): React.JSX.Element => {
                     <div>
                         <br />
                         Logs Cleaner
+                        <br />
+                        <br />
+                    </div>
+                </NavLink>
+                <hr />
+                <NavLink to='/utility/logs-summary' className={isActive === '/logs-summary' ? style.activeLinkTool : style.linkTool} onClick={ () => toggleActive('/logs-summary')}>
+                    <div>
+                        <br />
+                        Logs Summary
                         <br />
                         <br />
                     </div>

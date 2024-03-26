@@ -3,6 +3,7 @@ export type CSDProduct = {
   }
 
 type DriverInfo = {
+    name: string,
     cpu: string;
     ram: string;
     hard_disk: string;
@@ -27,7 +28,7 @@ export const CSDProducts = {
         "cs81003d": "CS 8100 3D",
         "cs8100sc3d": "CS 8100 SC 3D",
         "cs8200access": "CS 8200 ACCESS",
-        "cs8200neo": "CS 8100 NEO"
+        "cs8200neo": "CS 8200 NEO"
     },
 
     cs1x00 : {
@@ -66,6 +67,7 @@ export const CSDProducts = {
 export const Drivers: DriversType = {
     "no_selection": {
         "base": {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -80,6 +82,7 @@ export const Drivers: DriversType = {
     },
     "cs8100" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -92,6 +95,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "0.2.34.0" : {
+            name: "cs8100",
             cpu: "9th Generation Intel Core i5-9500 6 cores",
             ram: "16 GB",
             hard_disk: "250 GB",
@@ -106,6 +110,7 @@ export const Drivers: DriversType = {
     },
     "cs8100sc" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -118,6 +123,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "0.2.303.0" : {
+            name: "cs8100",
             cpu: "9th Generation Intel Core i5-9500 6 cores",
             ram: "16 GB",
             hard_disk: "250 GB",
@@ -132,6 +138,7 @@ export const Drivers: DriversType = {
     },
     "cs81003d" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -144,6 +151,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "1.1.36.0 " : {
+            name: "cs81003d",
             cpu: "9th Generation Intel Core i5-9500 6 cores",
             ram: "16 GB",
             hard_disk: "500 GB",
@@ -158,6 +166,7 @@ export const Drivers: DriversType = {
     },
     "cs8100sc3d" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -170,6 +179,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "1.0.36.0" : {
+            name: "cs81003d",
             cpu: "9th Generation Intel Core i5-9500 6 cores",
             ram: "16 GB",
             hard_disk: "500 GB",
@@ -184,6 +194,7 @@ export const Drivers: DriversType = {
     },
     "cs8200access" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -196,6 +207,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "1.0.12.0" : {
+            name: "cs8200",
             cpu: "2,4 Ghz Intel Duo Core",
             ram: "16 GB",
             hard_disk: "250 GB",
@@ -210,6 +222,7 @@ export const Drivers: DriversType = {
     },
     "cs8200neo" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -222,6 +235,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "1.0.375.0" : {
+            name: "cs8200",
             cpu: "2,4 Ghz Intel Duo Core",
             ram: "16 GB",
             hard_disk: "250 GB",
@@ -236,6 +250,7 @@ export const Drivers: DriversType = {
     },
     "cs1200" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -248,6 +263,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "0.5.0.47 " : {
+            name: "cs1200",
             cpu: "1.8 GHz Intel Pentium IV",
             ram: "2 GB",
             hard_disk: "N/A",
@@ -262,6 +278,7 @@ export const Drivers: DriversType = {
     },
     "cs1500" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -274,6 +291,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "0.5.0.47" : {
+            name: "cs1500",
             cpu: "1.8 GHz Intel Pentium IV",
             ram: "2 GB",
             hard_disk: "N/A",
@@ -288,6 +306,7 @@ export const Drivers: DriversType = {
     },
     "cs7200" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -300,6 +319,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "1.0.0.7 " : {
+            name: "cs7200",
             cpu: "2,4 Ghz Intel Duo Core",
             ram: "4 GB",
             hard_disk: "250 GB",
@@ -314,6 +334,7 @@ export const Drivers: DriversType = {
     },
     "cs7200neo" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -326,6 +347,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "1.0.0.7" : {
+            name: "cs7200",
             cpu: "2,4 Ghz Intel Duo Core",
             ram: "4 GB",
             hard_disk: "250 GB",
@@ -340,6 +362,7 @@ export const Drivers: DriversType = {
     },
     "cs7600" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -352,6 +375,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "1.0.10.11" : {
+            name: "cs7600",
             cpu: "2,4 Ghz Intel Duo Core",
             ram: "4 GB",
             hard_disk: "250 GB",
@@ -366,6 +390,7 @@ export const Drivers: DriversType = {
     },
     "cs5200" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -378,6 +403,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "4.6.19.0-A " : {
+            name: "cs5200",
             cpu: "2 GHz Intel Duo Core",
             ram: "2 GB",
             hard_disk: "80 GB",
@@ -392,6 +418,7 @@ export const Drivers: DriversType = {
     },
     "cs6200" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -404,6 +431,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "4.6.19.0-A" : {
+            name: "cs6200",
             cpu: "2 GHz Intel Duo Core",
             ram: "2 GB",
             hard_disk: "80 GB",
@@ -418,6 +446,7 @@ export const Drivers: DriversType = {
     },
     "cs9000" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -430,6 +459,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "5.4.5.7" : {
+            name: "cs9000",
             cpu: "2 GHz Intel Duo Core",
             ram: "4 GB",
             hard_disk: "250 GB",
@@ -444,6 +474,7 @@ export const Drivers: DriversType = {
     },
     "cs9300" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -456,6 +487,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "2.4.4.2-C": {
+            name: "cs9300",
             cpu: "2.4 GHz Intel Duo Core",
             ram: "4 GB",
             hard_disk: "250 GB",
@@ -470,6 +502,7 @@ export const Drivers: DriversType = {
     },
     "cs9600" : {
         "---" : {
+            name: "",
             cpu: "",
             ram: "",
             hard_disk: "",
@@ -482,6 +515,7 @@ export const Drivers: DriversType = {
             gpu_ram: ""
         },
         "1.5.54.0": {
+            name: "cs9600",
             cpu: "Intel Core i7-2600 (2nd generation) 3.40GHz",
             ram: "8 GB - 16 GB (PDIP) - 32 GB (MAR)",
             hard_disk: "N/A",

@@ -24,7 +24,7 @@ const ConfirmationOverlay: React.FC<ConfirmationOverlayProps> = ({action, csi, p
 
     const handleContinueBtn = function () {
         CSSecurityTool(action.toLowerCase(), csi.toLowerCase(), product.toLowerCase(), operation.toLowerCase());
-        setTimeout(() => setIsDone(true), 7000);
+        setTimeout(() => setIsDone(true), 5000);
     }
 
     

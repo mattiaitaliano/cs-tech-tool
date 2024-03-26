@@ -6,6 +6,7 @@ import { CSDProducts, Drivers } from "../tool_functions/driverVersions";
 import {formatSystemInfo, compareSpecifics} from '../tool_functions/systemComparison'
 
 export type SystemInfo = {
+    name?: string,
     cpu: string,
     gpu: string,
     ram: string,

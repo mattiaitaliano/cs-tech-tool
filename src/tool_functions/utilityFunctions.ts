@@ -94,7 +94,7 @@ export const useUtilityFunctions = () => {
     };
 
     const CSSecurityTool = async (action: string, csi: string, product:string, operation:string) => {
-        closeLoadingOverlay(7000);
+        closeLoadingOverlay(5000);
 
         if (operation === "defender") csSecurityDefender(csi, product, action)
 

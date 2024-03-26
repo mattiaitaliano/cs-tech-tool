@@ -612,12 +612,11 @@ dependencies = [
 name = "cs-tech-tool"
 version = "1.1.0"
 dependencies = [
- "embed-resource",
  "serde",
  "serde_json",
  "tauri",
  "tauri-build",
- "winapi",
+ "winres",
 ]
 
 [[package]]
@@ -3160,9 +3159,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-build"
-version = "1.5.0"
+version = "1.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "defbfc551bd38ab997e5f8e458f87396d2559d05ce32095076ad6c30f7fc5f9c"
+checksum = "6a62b3327886e7ef2978adc668432f1cc53f14e1d46e7ae04f730f4d48584623"
 dependencies = [
  "anyhow",
  "cargo_toml",
@@ -4164,6 +4163,15 @@ checksum = "937f3df7948156640f46aacef17a70db0de5917bda9c92b0f751f3a955b588fc"
 dependencies = [
  "cfg-if",
  "windows-sys 0.48.0",
+]
+
+[[package]]
+name = "winres"
+version = "0.1.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b68db261ef59e9e52806f688020631e987592bd83619edccda9c47d42cde4f6c"
+dependencies = [
+ "toml 0.5.11",
 ]
 
 [[package]]

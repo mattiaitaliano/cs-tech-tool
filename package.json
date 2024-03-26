@@ -18,6 +18,8 @@
     "@types/node": "^16.18.55",
     "@types/react": "^18.2.24",
     "@types/react-dom": "^18.2.8",
+    "d3": "^7.9.0",
+    "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
@@ -52,6 +54,9 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.5.0",
+    "@types/d3": "^7.4.3",
+    "@types/d3-tip": "^3.5.8",
+    "@types/papaparse": "^5.3.14",
     "cross-env": "^7.0.3"
   },
   "resolutions": {

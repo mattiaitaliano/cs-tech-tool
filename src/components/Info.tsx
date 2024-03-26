@@ -19,6 +19,8 @@ const Info = (): React.JSX.Element => {
                 <p><strong>Version</strong>: <span>1.1.0 (beta)</span>
                     <br/>
                     <strong>Last update:</strong> <span>1st March 2024</span>
+                    <br/>
+                    <strong>Expiring date:</strong> <span>30th April 2024</span>
                 
                 </p>
                 </div>

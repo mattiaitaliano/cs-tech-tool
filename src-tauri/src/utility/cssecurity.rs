@@ -18,23 +18,23 @@ use crate::utility::data;
 pub async fn cssecurity_defender_rules(csi: String, product: String, action: String) {
     if csi.to_lowercase() != "no_imaging" {
         match csi.as_str() {
-            "csi7" => data::proc_csi7::csi7_defender(action.clone()),
-            "csi8" => data::proc_csi8::csi8_defender(action.clone()),
-            "csi8_server" => data::proc_csi8server::csi8server_defender(action.clone()),
-            _ => data::proc_csi8server::csi8server_defender(action.clone()),
+            "csi7" => data::proc_csi7::csi7_defender(action.clone()).await,
+            "csi8_v2" => data::proc_csi8::csi8_defender(action.clone()).await,
+            "csi8_v3" => data::proc_csi8server::csi8server_defender(action.clone()).await,
+            _ => data::proc_csi8server::csi8server_defender(action.clone()).await,
         }
     }
 
     if product.to_lowercase() != "no_unit" {
         match product.as_str() {
-            "cs8100" => data::proc_8100::cs8100_defender(action.clone()),
-            "cs8100_sc" => data::proc_8100sc::cs8100sc_defender(action.clone()),
-            "cs8100_sc_3d" => data::proc_8100sc3d::cs8100sc3d_defender(action.clone()),
-            "cs8100_3d" => data::proc_81003d::cs81003d_defender(action.clone()),
-            "cs8200" => data::proc_8200::cs8200_defender(action.clone()),
-            "cs8200_neo" => data::proc_8200neo::cs8200neo_defender(action.clone()),
-            "cs9600_proxy" => data::proc_9600::cs9600_defender(action.clone()),
-            _ => data::proc_8100::cs8100_defender(action.clone()),
+            "cs8100" => data::proc_8100::cs8100_defender(action.clone()).await,
+            "cs8100_sc" => data::proc_8100sc::cs8100sc_defender(action.clone()).await,
+            "cs8100_sc_3d" => data::proc_8100sc3d::cs8100sc3d_defender(action.clone()).await,
+            "cs8100_3d" => data::proc_81003d::cs81003d_defender(action.clone()).await,
+            "cs8200" => data::proc_8200::cs8200_defender(action.clone()).await,
+            "cs8200_neo" => data::proc_8200neo::cs8200neo_defender(action.clone()).await,
+            "cs9600_proxy" => data::proc_9600::cs9600_defender(action.clone()).await,
+            _ => data::proc_8100::cs8100_defender(action.clone()).await,
         }
     }
     
@@ -51,7 +51,7 @@ pub fn cssecurity_firewall_rules(csi: String, product: String, action: String) {
     let product_lower = product.to_lowercase();
 
     if csi_lower != "no_imaging" {
-        if csi_lower == "csi8_server" {
+        if csi_lower == "csi8_v3" {
             csi_server_firewall(action.clone());
         } else {
             csi_firewall(action.clone());

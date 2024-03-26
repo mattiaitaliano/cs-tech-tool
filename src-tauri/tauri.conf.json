@@ -15,16 +15,16 @@
       "shell": {
         "all": true,
         "open": true
-    },
-    "notification": {
-      "all": true
-    },
-    "dialog": {
-      "open": true
-    },
-    "window": {
-      "all": true
-    }
+      },
+      "notification": {
+        "all": true
+      },
+      "dialog": {
+        "open": true
+      },
+      "window": {
+        "all": true
+      }
     },
     "bundle": {
       "active": true,

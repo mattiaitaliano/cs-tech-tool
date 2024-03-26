@@ -15,10 +15,10 @@ const LogCleaner = (): React.JSX.Element => {
         <>
             {showLoading && <LoadingOverlay />}
             <div className={style.toolPage}>
-                <h1>Log Cleaner</h1>
+                <h1>Logs Cleaner</h1>
                 <br />
                 <h2>
-                This tool delete from the Carestream's Folders on the local computer, some of the <strong>log files</strong> not used by the Service Team.
+                This tool deletes all Carestream <strong>logs</strong> on the local computer. This can be useful for reducing the tracefiles size or/and for reproducing an issue and analyzing only the logs for that issue.
                     <br />
                 </h2>
                 <br />

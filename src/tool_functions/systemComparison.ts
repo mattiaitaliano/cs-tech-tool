@@ -164,7 +164,11 @@ export function compareSpecifics(type: TypeOfComponent, data: SystemInfo, driver
             const regexResult = data.ram.match(regex);
             if (ram && regexResult) {
                 const systemRAM = parseFloat(regexResult[1]);
-                systemRAM >= 32 ? result = '✅' : result = '⚠️';
+                if (driver.name === "cs9600") {
+                    systemRAM >= 32 ? result = '✅' : result = '⚠️';
+                    break;
+                }
+                result = '✅'
                 break;
             }
             result = '❌';

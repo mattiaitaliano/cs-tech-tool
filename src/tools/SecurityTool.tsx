@@ -62,8 +62,8 @@ const SecurityTool = (): React.JSX.Element => {
                         <option value="no_selection">---</option>
                         <option value="No_Imaging">N/A</option> 
                         <option value="CSI7">CS Imaging 7</option> 
-                        <option value="CSI8">CS Imaging 8</option> 
-                        <option value="CSI8_Server">CS Imaging 8 S/C</option> 
+                        <option value="CSI8_V2">CS Imaging 8 V2</option> 
+                        <option value="CSI8_V3">CS Imaging 8 V3</option> 
                     </select>
                         </div>
 
